@@ -1,9 +1,9 @@
-/// _str-char-at($input-string, $index) => string
+/// #str-char-at($input-string, $index) => string
 /// Returns character from input string at provided index
 /// @param {string} $input-string - input string
 /// @param {number} $index - index of required char
 /// @return {string}
 
-@function _str-char-at($input-string, $index) {
+@function str-char-at($input-string, $index) {
     @return str-slice($input-string, $index, $index);
 }

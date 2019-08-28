@@ -1,4 +1,4 @@
-/// _str-substring-info($input-string, $substring) => map
+/// #_str-substring-info($input-string, $substring) => map
 /// Returns map with information about $substring in $input-string: quantity, first index and last index
 /// @access private
 /// @param {string} $input-string
@@ -11,7 +11,7 @@
     $first-index: null;
     $last-index: null;
     $string: $input-string;
-    $has-substring: _str-include($input-string, $substring);
+    $has-substring: str-include($input-string, $substring);
 
     @if ($has-substring) {
         $first-index: str-index($string, $substring);
@@ -23,7 +23,7 @@
         $current-index: str-index($input-string, $substring) + if($count == 1, 0, str-length($substring) - 1);
         $last-index: $last-index + $current-index;
         $input-string: str-slice($input-string, str-index($input-string, $substring) + str-length($substring));
-        $has-substring: _str-include($input-string, $substring);
+        $has-substring: str-include($input-string, $substring);
     }
 
     @return (

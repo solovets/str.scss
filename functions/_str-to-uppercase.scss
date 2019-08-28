@@ -1,9 +1,9 @@
-/// _str-to-uppercase($input-string) => string
+/// #str-to-uppercase($input-string) => string
 /// Returns the calling string value converted to uppercase
 /// Alias for to-upper-case String SASS built-in function
 /// @param {string} $input-string
 /// @return {string}
 
-@function _str-to-uppercase($input-string) {
+@function str-to-uppercase($input-string) {
     @return to-upper-case($input-string);
 }

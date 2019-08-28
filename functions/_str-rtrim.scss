@@ -1,10 +1,10 @@
-/// _str-rtrim($input-string[, $trim-chars]) => string
+/// #str-rtrim($input-string[, $trim-chars]) => string
 /// Returns string with removed trailing characters.
 /// @param {string} $input-string
 /// @param {string} $trim-chars [' ']
 /// @return {string}
 
-@function _str-rtrim($input-string, $trim-chars: ' ') {
+@function str-rtrim($input-string, $trim-chars: ' ') {
     @return str-slice(
                     $input-string,
                     1,

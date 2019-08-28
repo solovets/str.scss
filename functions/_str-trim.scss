@@ -1,10 +1,10 @@
-/// _str-trim($input-string[, $trim-chars]) => string
+/// #str-trim($input-string[, $trim-chars]) => string
 /// Returns trimmed string
 /// @param {string} $input-string
 /// @param {string} $trim-chars [' ']
 /// @return {string}
 
-@function _str-trim($input-string, $trim-chars: ' ') {
+@function str-trim($input-string, $trim-chars: ' ') {
     @return str-slice(
                     $input-string,
                     _str-get-not-skipped-char-index($input-string, 'left', $trim-chars),

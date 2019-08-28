@@ -1,15 +1,15 @@
-/// _str-split($input-string[, $separator]) => list
+/// #str-split($input-string[, $separator]) => list
 /// Returns an array of strings by separating the string into substrings
 /// @param {string} $input string - input string
 /// @param {string} $separator - separator to split on [' ']
 /// @return {list}
 /// @example
-///   @debug _str-split('Hello World');
+///   @debug str-split('Hello World');
 ///   // => ("Hello" "World")
-///   @debug _str-split('Hello World, Hello World', ', ');
+///   @debug str-split('Hello World, Hello World', ', ');
 ///   // => ("Hello World" "Hello World")
 
-@function _str-split($input-string, $separator: ' ') {
+@function str-split($input-string, $separator: ' ') {
 
     $list: ();
     $index: str-index($input-string, $separator);

@@ -1,10 +1,10 @@
-/// _str-first-index($input-string, $substring) => number
+/// #str-first-index($input-string, $substring) => number
 /// Returns first index of substring in provided string
 /// @param {string} $input-string
 /// @param {string} $substring
 /// @return {number}
 
-@function _str-first-index($input-string, $substring) {
+@function str-first-index($input-string, $substring) {
     $substring-info: _str-substring-info($input-string, $substring);
 
     @return map-get($substring-info, first-index);

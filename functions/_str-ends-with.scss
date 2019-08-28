@@ -1,19 +1,19 @@
-/// _str-ends-with($input-string, $substring[, $ignore-case]) => boolean
+/// #str-ends-with($input-string, $substring[, $ignore-case]) => boolean
 /// Returns true if string ends with provided substring
 /// @param {string} $input-string
 /// @param {string} $substring
 /// @param {boolean} $ignore-case [false]
 /// @return {boolean}
 
-@function _str-ends-with($input-string, $substring, $ignore-case: false) {
+@function str-ends-with($input-string, $substring, $ignore-case: false) {
 
-    @if (_str-is-blank($substring)) {
+    @if (str-is-blank($substring)) {
         @return true;
     }
 
     @if ($ignore-case) {
-        $input-string: _str-to-lowercase($input-string);
-        $substring: _str-to-lowercase($substring);
+        $input-string: str-to-lowercase($input-string);
+        $substring: str-to-lowercase($substring);
     }
 
     $start-index: str-length($substring) * -1;

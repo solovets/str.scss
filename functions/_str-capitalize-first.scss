@@ -1,9 +1,9 @@
-/// _str-capitalize-first($input-string) => string
+/// #_str-capitalize-first($input-string) => string
 /// Returns input string where the first letter is converted to uppercase
 /// @access private
 /// @param {string} $input-string - input string
 /// @return {string}
 
 @function _str-capitalize-first($input-string) {
-    @return _str-to-uppercase(str-slice($input-string, 1, 1)) + str-slice($input-string, 2);
+    @return str-to-uppercase(str-slice($input-string, 1, 1)) + str-slice($input-string, 2);
 }

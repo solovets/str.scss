@@ -1,12 +1,12 @@
-/// _str-chars($input-string) => list
+/// #str-chars($input-string) => list
 /// Returns SCSS list with all string characters.
 /// @param {string} $input-string - input string
 /// @return {list}
 /// @example
-///   @debug _str-chars('Hello world');
+///   @debug str-chars('Hello world');
 ///   // => ("H" "e" "l" "l" "o" " " "w" "o" "r" "l" "d")
 
-@function _str-chars($input-string) {
+@function str-chars($input-string) {
 
     $chars: ();
 

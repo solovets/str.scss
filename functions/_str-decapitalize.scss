@@ -1,14 +1,14 @@
-/// _str-decapitalize($input-string[, $lowercase-rest]) => string
+/// #str-decapitalize($input-string[, $lowercase-rest]) => string
 /// Returns string with decapitalized first letter
 /// @param {string} $input-string
 /// @param {boolean} $lowercase-rest [false]
 /// @return {string}
 
-@function _str-decapitalize($input-string, $lowercase-rest: false) {
+@function str-decapitalize($input-string, $lowercase-rest: false) {
 
     @if ($lowercase-rest == true) {
-        $first-item: nth(_str-split($input-string), 1);
-        $first-item: _str-to-lowercase($first-item);
+        $first-item: nth(str-split($input-string), 1);
+        $first-item: str-to-lowercase($first-item);
         $input-string: $first-item + str-slice($input-string, str-length($first-item) + 1);
     } @else {
         $input-string: _str-decapitalize-first($input-string);

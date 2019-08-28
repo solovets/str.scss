@@ -1,11 +1,11 @@
-/// _str-reverse($input-string) => string
+/// #str-reverse($input-string) => string
 /// Returns reversed string.
 /// @param {string} $input-string
 /// @return {string}
 
-@function _str-reverse($input-string) {
+@function str-reverse($input-string) {
     $output-string: '';
-    $chars: _str-chars($input-string);
+    $chars: str-chars($input-string);
 
     @for $i from length($chars) through 1 {
         $output-string: $output-string + nth($chars, $i);

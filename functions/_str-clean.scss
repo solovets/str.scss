@@ -1,0 +1,16 @@
+/// _str-clean($input-string) => string
+/// Returns trimmed string with multiply spaces replaced with single space
+/// @param {string} $input-string - input string
+/// @return {string}
+
+@function _str-clean($input-string) {
+    $input-string: _str-trim($input-string);
+    $output-string: '';
+    $items: _str-split($input-string);
+
+    @for $i from 1 through length($items) {
+        $output-string: $output-string + if($i == 1, '', ' ') + nth($items, $i);
+    }
+
+    @return $output-string;
+}

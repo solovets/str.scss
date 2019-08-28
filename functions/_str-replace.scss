@@ -1,0 +1,22 @@
+/// _str-replace($input-string, $substring[, $replace, $g]) => string
+/// Returns copy of input string where defined substring replaced by $replace argument
+/// @param {string} $input-string
+/// @param {string} $substring
+/// @param {string} $replace ['']
+/// @param {boolean} $g [true]
+/// @return {string}
+
+@function _str-replace($input-string, $substring, $replace: '', $g: true) {
+
+    $index: str-index($input-string, $substring);
+
+    @if $index {
+        @if $g {
+            @return str-slice($input-string, 1, $index - 1) + $replace + _str-replace(str-slice($input-string, $index + str-length($substring)), $substring, $replace);
+        } @else {
+            @return str-slice($input-string, 1, $index - 1) + $replace + str-slice($input-string, $index + str-length($substring));
+        }
+    }
+
+    @return $input-string;
+}

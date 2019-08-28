@@ -1,0 +1,9 @@
+/// _str-to-lowercase($input-string) => string
+/// Returns the calling string value converted to lowercase
+/// Alias for to-lower-case String SASS built-in function
+/// @param {string} $input-string
+/// @return {string}
+
+@function _str-to-lowercase($input-string) {
+    @return to-lower-case($input-string);
+}

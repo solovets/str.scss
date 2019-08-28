@@ -1,0 +1,14 @@
+/// _str-is-blank($input-string) => boolean
+/// Returns true if string is empty or contains whitespaces only
+/// @param {string} $input-string
+/// @return {boolean}
+
+@function _str-is-blank($input-string) {
+    $input-string: _str-trim($input-string);
+
+    @if (str-length($input-string) > 0) {
+        @return false;
+    }
+
+    @return true;
+}

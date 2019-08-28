@@ -1,0 +1,9 @@
+/// _str-include($input-string, $substring) => boolean
+/// Returns boolean result of check if string contains a substring.
+/// @param {string} $input-string
+/// @param {string} $substring
+/// @return {boolean}
+
+@function _str-include($input-string, $substring) {
+    @return not not str-index($input-string, $substring);
+}

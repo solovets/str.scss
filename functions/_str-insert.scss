@@ -1,0 +1,11 @@
+/// _str-insert($input-string, $substring, $index) => string
+/// Returns a copy of $input-string with $substring inserted at $index.
+/// Alias for str-insert String SASS built-in function
+/// @param {string} $input-string
+/// @param {string} $substring
+/// @param {number} $index
+/// @return {string}
+
+@function _str-insert($input-string, $substring, $index) {
+    @return str-insert($input-string, $substring, $index);
+}

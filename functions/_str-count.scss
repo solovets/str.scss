@@ -1,0 +1,11 @@
+/// _str-count($input-string, $substring) => number
+/// Returns number of occurrences of substring in string.
+/// @param {string} $input-string
+/// @param {string} $substring
+/// @return {number}
+
+@function _str-count($input-string, $substring) {
+    $substring-info: _str-substring-info($input-string, $substring);
+
+    @return map-get($substring-info, count);
+}

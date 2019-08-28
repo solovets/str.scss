@@ -1,0 +1,16 @@
+/// _str-repeat($input-string[, $times, $separator]) => string
+/// Returns input string repeated provided number of times
+/// @param {string} $input-string
+/// @param {number} $times [1]
+/// @param {string} $separate-with ['']
+/// @return {string}
+
+@function _str-repeat($input-string, $times: 1, $separator: '') {
+    $output-string: '';
+
+    @for $i from 1 through $times {
+        $output-string: $output-string + if($i == 1, '', $separator) + $input-string;
+    }
+
+    @return $output-string;
+}

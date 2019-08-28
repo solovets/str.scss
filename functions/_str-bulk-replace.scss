@@ -1,0 +1,16 @@
+/// _str-bulk-replace($input-string, $substrings[, $replace, $g]) => string
+/// Returns copy of input string where defined substrings replaced by $replace argument
+/// @param {string} $input-string - input string
+/// @param {list} $substrings - substrings to search in input string
+/// @param {string} $replace [''] - string to be inserted instead of substrings
+/// @param {boolean} $g [true] - global flag
+/// @return {string}
+
+@function _str-bulk-replace($input-string, $substrings, $replace: '', $g: true) {
+
+    @each $substring in $substrings {
+        $input-string: _str-replace($input-string, $substring, $replace, $g);
+    }
+
+    @return $input-string;
+}

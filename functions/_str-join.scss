@@ -1,0 +1,19 @@
+/// _str-join($input-list[, $separator]) => string
+/// Returns input list converted to a string
+/// @param {list} $input-list
+/// @param {string} $separator ['']
+/// @return {string}
+
+@function _str-join($input-list, $separator: '') {
+    $output-string: '';
+
+    @if type_of($input-list) == list {
+        @each $item in $input-list {
+            @if type-of($item) == string or type-of($item) == number {
+                $output-string: $output-string + if(index($input-list, $item) != 1, $separator, '') + $item;
+            }
+        }
+    }
+
+    @return $output-string;
+};

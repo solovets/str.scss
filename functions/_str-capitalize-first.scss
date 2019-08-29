@@ -3,6 +3,9 @@
 /// @access private
 /// @param {string} $input-string - input string
 /// @return {string}
+/// @example
+///   @debug _str-capitalize-first('hello wold');
+///   // => 'Hello world'
 
 @function _str-capitalize-first($input-string) {
     @return str-to-uppercase(str-slice($input-string, 1, 1)) + str-slice($input-string, 2);

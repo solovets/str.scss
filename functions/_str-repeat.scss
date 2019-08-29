@@ -5,12 +5,13 @@
 /// @param {string} $separate-with ['']
 /// @return {string}
 /// @example
-///   @debug _str-repeat('Hello');
+///   @debug str-repeat('Hello');
 ///   // => "Hello"
-///   @debug _str-repeat('Hello', 2);
+///   @debug str-repeat('Hello', 2);
 ///   // => "HelloHello"
-///   @debug _str-repeat('Hello', 2, ', ');
+///   @debug str-repeat('Hello', 2, ', ');
 ///   // => "Hello, Hello"
+
 @function str-repeat($input-string, $times: 1, $separator: '') {
     $output-string: '';
 

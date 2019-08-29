@@ -1,4 +1,5 @@
-/// #_str-get-not-skipped-char-index($input-string[, $search-from, $skip-char]) => number
+/// #_str-get-not-skipped-char-index($input-string[, $search-from, $trim-chars]) => number
+/// Returns an index of first character that doesn't match any characters from $trim-chars argument
 /// @access private
 /// @param {string} $input-string
 /// @param {'left' | 'right'} $search-from ['left']

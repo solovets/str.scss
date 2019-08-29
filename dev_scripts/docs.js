@@ -4,7 +4,7 @@ const fs = require('fs');
 const pkg = require('../package');
 
 sassdoc.parse([
-    './_underscore-string.scss', './functions/*.scss'
+    './_str.scss', './functions/*.scss'
 ], {
     verbose: true,
     display: {
@@ -18,21 +18,22 @@ sassdoc.parse([
 
     let contents = '# ' + pkg.name + '\n\n' + pkg.description + '\n\n* * * *\nContents:\n\n';
     let content = '\n* * * *\n\n';
+    let tests = '@import "../str";\n\n';
 
     functions.forEach((item) => {
 
-        if (result[item].access === 'public') {
-            let descriptionData = result[item].description.split('\n');
-            let link = descriptionData[0];
-            let description = descriptionData[1];
-            let alias = descriptionData.length > 2 ? descriptionData[2] : false;
+        let descriptionData = result[item].description.split('\n');
+        let link = descriptionData[0];
+        let description = descriptionData[1];
+        let alias = descriptionData.length > 2 ? descriptionData[2] : false;
 
+        if (result[item].access === 'public') {
             // Create anchor for Contents section
             contents +=
                 '+ [' +
                 result[item].context.name +
                 '](' +
-                link.replace(/[\(\)\$\,=>]/g, '').replace(/\s/g, '-') + ') ' +
+                link.replace(/[\[\]\(\)\$\,=>]/g, '').replace(/\s/g, '-') + ') ' +
                 result[item] .description.split('\n')[1] + '\n';
 
             // Create title and add short description
@@ -66,6 +67,21 @@ sassdoc.parse([
                 content += '**Example**\n\n```scss\n' + result[item].example[0].code + '\n```\n\n';
             }
         }
+
+        // Create tests
+        tests += '@debug(\'-----------------------------------\');\n@debug(\'';
+        tests += result[item].access + ' ' + result[item].context.type + ' ' + result[item].context.name + '\');\n\n';
+        if (result[item].hasOwnProperty('example')) {
+            let code = result[item].example[0].code.split('\n');
+            code.forEach(example => {
+                if (/^@debug/.test(example)) {
+                    tests += '@debug("' + example.replace(/@debug\s/g, '') + '");\n';
+                    tests += example + '\n\n';
+                }
+            });
+        } else {
+            tests += '@debug(\'WARNING! ' + result[item].context.name.toUpperCase() + ' DOES NOT HAVE TEST\');\n\n';
+        }
     });
 
     //console.log(JSON.stringify(result, null, 4));
@@ -74,5 +90,10 @@ sassdoc.parse([
     fs.writeFile("README.md", contents + content, function(error) {
         if(error) throw error;
         console.log('README.md updated');
+    });
+
+    fs.writeFile('./test/test.scss', tests, function(error) {
+        if(error) throw error;
+        console.log('test/test.scss updated');
     });
 });

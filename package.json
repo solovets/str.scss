@@ -4,8 +4,8 @@
   "description": "str.scss - set of functions that helps to manipulate strings.",
   "main": "_str.scss",
   "scripts": {
-    "test": "test",
-    "docs": "sassdoc ./_underscore-string.scss ./functions/*.scss"
+    "test": "scss ./test/test.scss ./test/test.css",
+    "docs": "node dev_scripts/docs.js"
   },
   "repository": {
     "type": "git",

@@ -84,10 +84,9 @@ sassdoc.parse([
         }
     });
 
-    //console.log(JSON.stringify(result, null, 4));
-    //console.log(contents, content);
+    const install = '\n* * * *\n\n' + fs.readFileSync('./dev_scripts/_install.md', 'utf8');
 
-    fs.writeFile("README.md", contents + content, function(error) {
+    fs.writeFile("README.md", contents + install + content, function(error) {
         if(error) throw error;
         console.log('README.md updated');
     });

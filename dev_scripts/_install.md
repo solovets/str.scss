@@ -12,7 +12,7 @@ npm install str.scss
 
 $section-name: 'Hello World';
 
-.#{str-join($section-name)} {
+.#{str-to-lowercase(str-replace($section-name, ' ', '-'))} {
     &__title {
         &::after {
             content: str-to-uppercase($section-name)
@@ -24,7 +24,8 @@ $section-name: 'Hello World';
 Compiled to
 
 ```css
-.HelloWorld__title:after {
+.hello-world__title:after {
     content: "HELLO WORLD";
 }
 ```
+

@@ -3,6 +3,11 @@
 /// @param {list} $input-list
 /// @param {string} $separator ['']
 /// @return {string}
+/// @example
+///   @debug str-join((1, '. ', 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'));
+///   // => "1. Hello World"
+///   @debug str-join(('a', 'b', 'c'), '*');
+///   // => "a*b*c"
 
 @function str-join($input-list, $separator: '') {
     $output-string: '';

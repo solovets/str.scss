@@ -3,6 +3,9 @@
 /// Alias for to-lower-case String SASS built-in function
 /// @param {string} $input-string
 /// @return {string}
+/// @example
+///   @debug str-to-lowercase('Hello World');
+///   // => "hello world"
 
 @function str-to-lowercase($input-string) {
     @return to-lower-case($input-string);

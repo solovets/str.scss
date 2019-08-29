@@ -3,6 +3,13 @@
 /// @param {string} $input-string - input string
 /// @param {boolean} $lowercase-rest [false]
 /// @return {string}
+/// @example
+///   @debug str-capitalize('hello wold');
+///   // => "Hello wold"
+///   @debug str-capitalize('hELLO wold');
+///   // => "HELLO wold"
+///   @debug str-capitalize('hELLO wold', true);
+///   // => "Hello wold"
 
 @function str-capitalize($input-string, $lowercase-rest: false) {
 

@@ -5,6 +5,13 @@
 /// @param {string} $replace [''] - string to be inserted instead of substrings
 /// @param {boolean} $g [true] - global flag
 /// @return {string}
+/// @example
+///   @debug str-replace('Hello world', ('l', 'o'), '*');
+///   // => "He*** w*r*d"
+///   @debug str-replace('Hello world', ('l', 'o'), $g: false);
+///   // => "Hel world"
+///   @debug str-replace('Hello To The world', ('Hello', 'To The'), 'Privet');
+///   // => "Privet Privet world"
 
 @function str-bulk-replace($input-string, $substrings, $replace: '', $g: true) {
 

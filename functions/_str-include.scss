@@ -3,6 +3,9 @@
 /// @param {string} $input-string
 /// @param {string} $substring
 /// @return {boolean}
+/// @example
+/// @debug str-include('Hello World', 'lo');
+///   // => true
 
 @function str-include($input-string, $substring) {
     @return not not str-index($input-string, $substring);

@@ -3,6 +3,11 @@
 /// @param {string} $input-string
 /// @param {string} $substring
 /// @return {number}
+/// @example
+///   @debug str-first-index('Hello World', 'l');
+///   // => 3
+///   @debug str-first-index('Hello World', 'z');
+///   // => null
 
 @function str-first-index($input-string, $substring) {
     $substring-info: _str-substring-info($input-string, $substring);

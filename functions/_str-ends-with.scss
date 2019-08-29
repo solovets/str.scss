@@ -4,6 +4,14 @@
 /// @param {string} $substring
 /// @param {boolean} $ignore-case [false]
 /// @return {boolean}
+/// @example
+///   @debug str-starts-with('Hello World', 'Hel');
+///   // => true
+///   @debug str-starts-with('Hello World', 'hel');
+///   // => false
+///   @debug str-starts-with('Hello World', 'hel', true);
+///   // => true
+
 
 @function str-ends-with($input-string, $substring, $ignore-case: false) {
 

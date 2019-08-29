@@ -3,6 +3,11 @@
 /// @param {string} $input-string
 /// @param {string} $trim-chars [' ']
 /// @return {string}
+/// @example
+///   @debug str-ltrim(' Hello World ');
+///   // => "Hello World "
+///   @debug str-ltrim(' -_ Helllo World _- ', '- _');
+///   // => "Helllo World _- "
 
 @function str-ltrim($input-string, $trim-chars: ' ') {
     @return str-slice(

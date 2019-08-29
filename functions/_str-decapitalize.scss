@@ -3,6 +3,13 @@
 /// @param {string} $input-string
 /// @param {boolean} $lowercase-rest [false]
 /// @return {string}
+/// @example
+///   @debug str-decapitalize('Hello World');
+///   // => "hello World"
+///   @debug str-decapitalize('HELLO WORLD');
+///   // => "hELLO WORLD"
+///   @debug str-decapitalize('HELLO world', true);
+///   // => "hello world"
 
 @function str-decapitalize($input-string, $lowercase-rest: false) {
 

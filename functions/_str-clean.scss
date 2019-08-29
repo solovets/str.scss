@@ -2,6 +2,11 @@
 /// Returns trimmed string with multiply spaces replaced with single space
 /// @param {string} $input-string - input string
 /// @return {string}
+/// @example
+///   @debug str-clean('Hello  World');
+///   // => "Hello World"
+///   @debug str-clean('  Hello  World   ');
+///   // => "Hello World"
 
 @function str-clean($input-string) {
     $input-string: str-trim($input-string);

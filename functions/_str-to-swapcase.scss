@@ -2,6 +2,9 @@
 /// Returns a copy of the string in which all the case-based characters have had their case swapped.
 /// @param {string} $input-string
 /// @return {string}
+/// @example
+///   @debug str-to-swapcase('hELLO wORLD');
+///   // => "Hello World"
 
 @function str-to-swapcase($input-string) {
     $chars: str-chars($input-string);

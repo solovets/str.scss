@@ -2,6 +2,13 @@
 /// Returns true if string is empty or contains whitespaces only
 /// @param {string} $input-string
 /// @return {boolean}
+/// @example
+/// @debug str-is-blank('');
+/// // => true
+/// @debug str-is-blank(' ');
+/// // => true
+/// @debug str-is-blank('Hello World');
+/// // => false
 
 @function str-is-blank($input-string) {
     $input-string: str-trim($input-string);

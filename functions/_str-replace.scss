@@ -5,6 +5,13 @@
 /// @param {string} $replace ['']
 /// @param {boolean} $g [true]
 /// @return {string}
+/// @example
+///   @debug str-replace('Hello world', 'l');
+///   // => "Heo word"
+///   @debug str-replace('Hello world', 'l', $g: false);
+///   // => "Helo world"
+///   @debug str-replace('Hello world', 'Hello', 'Privet');
+///   // => "Privet world"
 
 @function str-replace($input-string, $substring, $replace: '', $g: true) {
 

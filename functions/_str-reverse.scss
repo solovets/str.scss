@@ -2,6 +2,9 @@
 /// Returns reversed string.
 /// @param {string} $input-string
 /// @return {string}
+/// @example
+///   @debug str-reverse('Hello World');
+///   // => "dlroW olleH"
 
 @function str-reverse($input-string) {
     $output-string: '';

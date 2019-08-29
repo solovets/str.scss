@@ -3,6 +3,11 @@
 /// @param {string} $input-string - input string
 /// @param {number} $index - index of required char
 /// @return {string}
+/// @example
+///   @debug str-char-at('Hello World', 2);
+///   // => "e"
+///   @debug str-char-at('Hello World', -4);
+///   // => "o"
 
 @function str-char-at($input-string, $index) {
     @return str-slice($input-string, $index, $index);

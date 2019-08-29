@@ -3,6 +3,9 @@
 /// Alias for to-upper-case String SASS built-in function
 /// @param {string} $input-string
 /// @return {string}
+/// @example
+///   @debug str-to-uppercase('hello world');
+///   // => "HELLO WORLD"
 
 @function str-to-uppercase($input-string) {
     @return to-upper-case($input-string);

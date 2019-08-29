@@ -3,6 +3,11 @@
 /// @param {string} $input-string
 /// @param {string} $trim-chars [' ']
 /// @return {string}
+/// @example
+///   @debug str-rtrim(' Hello World ');
+///   // => " Hello World"
+///   @debug str-rtrim(' -_ Helllo World _- ', '- _');
+///   // => " -_ Helllo World"
 
 @function str-rtrim($input-string, $trim-chars: ' ') {
     @return str-slice(

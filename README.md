@@ -7,28 +7,28 @@ Contents:
 
 + [str-chars](#str-charsinput-string--list) Returns SCSS list with all string characters.
 + [str-char-at](#str-char-atinput-string-index--string) Returns character from input string at provided index
-+ [str-split](#str-splitinput-string[-separator]--list) Returns an array of strings by separating the string into substrings
-+ [str-join](#str-joininput-list[-separator]--string) Returns input list converted to a string
++ [str-split](#str-splitinput-string-separator--list) Returns an array of strings by separating the string into substrings
++ [str-join](#str-joininput-list-separator--string) Returns input list converted to a string
 + [str-to-uppercase](#str-to-uppercaseinput-string--string) Returns the calling string value converted to uppercase
 + [str-to-lowercase](#str-to-lowercaseinput-string--string) Returns the calling string value converted to lowercase
 + [str-to-swapcase](#str-to-swapcaseinput-string--string) Returns a copy of the string in which all the case-based characters have had their case swapped.
-+ [str-replace](#str-replaceinput-string-substring[-replace-g]--string) Returns copy of input string where defined substring replaced by $replace argument
-+ [str-bulk-replace](#str-bulk-replaceinput-string-substrings[-replace-g]--string) Returns copy of input string where defined substrings replaced by $replace argument
++ [str-replace](#str-replaceinput-string-substring-replace-g--string) Returns copy of input string where defined substring replaced by $replace argument
++ [str-bulk-replace](#str-bulk-replaceinput-string-substrings-replace-g--string) Returns copy of input string where defined substrings replaced by $replace argument
 + [str-include](#str-includeinput-string-substring--boolean) Returns boolean result of check if string contains a substring.
 + [str-count](#str-countinput-string-substring--number) Returns number of occurrences of substring in string.
 + [str-first-index](#str-first-indexinput-string-substring--number) Returns first index of substring in provided string
 + [str-last-index](#str-last-indexinput-string-substring--number) Returns last index of substring in provided string
-+ [str-capitalize](#str-capitalizeinput-string[-lowercase-rest]--string) Returns string with capitalized first letter
-+ [str-decapitalize](#str-decapitalizeinput-string[-lowercase-rest]--string) Returns string with decapitalized first letter
++ [str-capitalize](#str-capitalizeinput-string-lowercase-rest--string) Returns string with capitalized first letter
++ [str-decapitalize](#str-decapitalizeinput-string-lowercase-rest--string) Returns string with decapitalized first letter
 + [str-reverse](#str-reverseinput-string--string) Returns reversed string.
-+ [str-trim](#str-triminput-string[-trim-chars]--string) Returns trimmed string
-+ [str-ltrim](#str-ltriminput-string[-trim-chars]--string) Returns string with removed leading characters.
-+ [str-rtrim](#str-rtriminput-string[-trim-chars]--string) Returns string with removed trailing characters.
++ [str-trim](#str-triminput-string-trim-chars--string) Returns trimmed string
++ [str-ltrim](#str-ltriminput-string-trim-chars--string) Returns string with removed leading characters.
++ [str-rtrim](#str-rtriminput-string-trim-chars--string) Returns string with removed trailing characters.
 + [str-clean](#str-cleaninput-string--string) Returns trimmed string with multiply spaces replaced with single space
 + [str-is-blank](#str-is-blankinput-string--boolean) Returns true if string is empty or contains whitespaces only
-+ [str-starts-with](#str-starts-withinput-string-substring[-ignore-case]--boolean) Returns true if string starts with provided substring
-+ [str-ends-with](#str-ends-withinput-string-substring[-ignore-case]--boolean) Returns true if string ends with provided substring
-+ [str-repeat](#str-repeatinput-string[-times-separator]--string) Returns input string repeated provided number of times
++ [str-starts-with](#str-starts-withinput-string-substring-ignore-case--boolean) Returns true if string starts with provided substring
++ [str-ends-with](#str-ends-withinput-string-substring-ignore-case--boolean) Returns true if string ends with provided substring
++ [str-repeat](#str-repeatinput-string-times-separator--string) Returns input string repeated provided number of times
 
 * * * *
 
@@ -204,11 +204,11 @@ Returns copy of input string where defined substrings replaced by $replace argum
 **Example**
 
 ```scss
-@debug str-replace('Hello world', ('l', 'o'), '*');
+@debug str-bulk-replace('Hello world', ('l', 'o'), '*');
 // => "He*** w*r*d"
-@debug str-replace('Hello world', ('l', 'o'), $g: false);
+@debug str-bulk-replace('Hello world', ('l', 'o'), $g: false);
 // => "Hel world"
-@debug str-replace('Hello To The world', ('Hello', 'To The'), 'Privet');
+@debug str-bulk-replace('Hello To The world', ('Hello', 'To The'), 'Privet');
 // => "Privet Privet world"
 ```
 
@@ -514,11 +514,11 @@ Returns input string repeated provided number of times
 **Example**
 
 ```scss
-@debug _str-repeat('Hello');
+@debug str-repeat('Hello');
 // => "Hello"
-@debug _str-repeat('Hello', 2);
+@debug str-repeat('Hello', 2);
 // => "HelloHello"
-@debug _str-repeat('Hello', 2, ', ');
+@debug str-repeat('Hello', 2, ', ');
 // => "Hello, Hello"
 ```
 

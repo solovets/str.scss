@@ -1,3 +1,10 @@
+$str-scss-strong-type-check: false !default;
+
+@if type-of($str-scss-strong-type-check) != bool {
+    @error('[str.scss] Global variable `$str-scss-strong-type-check` should have boolean type');
+}
+
+@import "functions/check-type";
 @import "functions/str-chars";
 @import "functions/str-char-at";
 @import "functions/str-split";

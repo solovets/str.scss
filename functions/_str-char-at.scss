@@ -10,5 +10,18 @@
 ///   // => "o"
 
 @function str-char-at($input-string, $index) {
-    @return str-slice($input-string, $index, $index);
+
+    $result: '';
+    $error: '[str.scss] Wront type of `$input-string` argument in str-char-at function';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        $result: str-slice($input-string, $index, $index);
+    }
+
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
 }

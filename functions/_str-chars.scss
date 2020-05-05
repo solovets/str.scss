@@ -9,10 +9,18 @@
 @function str-chars($input-string) {
 
     $chars: ();
+    $error: '[str.scss] Wront type of `$input-string` argument in str-chars function';
+    $argument-is-correct: check-type($input-string);
 
-    @for $i from 1 through str-length($input-string) {
-        $chars: append($chars, str-slice($input-string, $i, $i));
+    @if $argument-is-correct {
+        @for $i from 1 through str-length($input-string) {
+            $chars: append($chars, str-slice($input-string, $i, $i));
+        }
     }
 
-    @return $chars;
+    @if ($str-scss-strong-type-check and $argument-is-correct)  or not $str-scss-strong-type-check {
+        @return $chars;
+    } @else {
+        @error $error;
+    }
 }

@@ -8,5 +8,19 @@
 ///   // => "HELLO WORLD"
 
 @function str-to-uppercase($input-string) {
-    @return to-upper-case($input-string);
+
+    $result: '';
+    $error: '[str.scss] Wront type of `$input-string` argument in str-to-uppercase function';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        $result: to-upper-case($input-string);
+    }
+
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
+
 }

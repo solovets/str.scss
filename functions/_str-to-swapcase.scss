@@ -7,16 +7,30 @@
 ///   // => "Hello World"
 
 @function str-to-swapcase($input-string) {
-    $chars: str-chars($input-string);
-    $string: '';
 
-    @each $char in $chars {
-        @if ($char == str-to-uppercase($char)) {
-            $string: $string + str-to-lowercase($char);
-        } @else {
-            $string: $string + str-to-uppercase($char);
+    $result: '';
+    $error: '[str.scss] Wront type of `$input-string` argument in str-to-swapcase function';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        $chars: str-chars($input-string);
+
+        @each $char in $chars {
+            @if ($char == str-to-uppercase($char)) {
+                $result: $result + str-to-lowercase($char);
+            } @else {
+                $result: $result + str-to-uppercase($char);
+            }
         }
     }
 
-    @return $string;
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
+
+
+
+    @return $result;
 }

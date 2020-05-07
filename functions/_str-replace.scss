@@ -15,15 +15,25 @@
 
 @function str-replace($input-string, $substring, $replace: '', $g: true) {
 
-    $index: str-index($input-string, $substring);
+    $result: $input-string;
+    $error: '[str.scss] Wront type of `$input-string` argument in str-replace function';
+    $argument-is-correct: check-type($input-string);
 
-    @if $index {
-        @if $g {
-            @return str-slice($input-string, 1, $index - 1) + $replace + str-replace(str-slice($input-string, $index + str-length($substring)), $substring, $replace);
-        } @else {
-            @return str-slice($input-string, 1, $index - 1) + $replace + str-slice($input-string, $index + str-length($substring));
+    @if $argument-is-correct {
+        $index: str-index($result, $substring);
+
+        @if $index {
+            @if $g {
+                @return str-slice($result, 1, $index - 1) + $replace + str-replace(str-slice($result, $index + str-length($substring)), $substring, $replace);
+            } @else {
+                @return str-slice($result, 1, $index - 1) + $replace + str-slice($result, $index + str-length($substring));
+            }
         }
     }
 
-    @return $input-string;
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
 }

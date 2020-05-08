@@ -1,9 +1,0 @@
-@function check-type($input, $type: string) {
-    $result: false;
-
-    @if type-of($input) == $type {
-        $result: true;
-    }
-
-    @return $result;
-}

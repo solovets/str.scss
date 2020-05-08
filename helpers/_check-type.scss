@@ -1,0 +1,17 @@
+@function check-type($input, $type: string) {
+
+    $inputs: ();
+    $types: ();
+
+    $inputs: if(type-of($input) != list, append($inputs, $input), $input);
+    $types:  if(type-of($type) != list,  append($types, $type),   $type);
+
+    @each $item in $inputs {
+        @if index($types, type-of($item)) == null {
+            @return false;
+        }
+    }
+
+    @return true;
+
+}

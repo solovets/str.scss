@@ -13,7 +13,7 @@
 
     $result: '';
     $error: '[str.scss] Wront type of `$input-list` argument in str-join function';
-    $argument-is-correct: check-type($input-list, list);
+    $argument-is-correct: check-type($input-list, (string, number));
 
     @if $argument-is-correct {
         @each $item in $input-list {

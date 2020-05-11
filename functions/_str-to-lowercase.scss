@@ -9,7 +9,7 @@
 
 @function str-to-lowercase($input-string) {
 
-    $result: '';
+    $result: $input-string;
     $error: '[str.scss] Wront type of `$input-string` argument in str-to-lowercase function';
     $argument-is-correct: check-type($input-string);
 

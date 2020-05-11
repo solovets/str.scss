@@ -4,7 +4,9 @@ $str-scss-strong-type-check: false !default;
     @error('[str.scss] Global variable `$str-scss-strong-type-check` should have boolean type');
 }
 
-@import "functions/check-type";
+@import "helpers/check-type";
+@import "helpers/str-substring-info";
+
 @import "functions/str-chars";
 @import "functions/str-char-at";
 @import "functions/str-split";
@@ -15,7 +17,6 @@ $str-scss-strong-type-check: false !default;
 @import "functions/str-replace";
 @import "functions/str-bulk-replace";
 @import "functions/str-include";
-@import "functions/str-substring-info";
 @import "functions/str-count";
 @import "functions/str-first-index";
 @import "functions/str-last-index";

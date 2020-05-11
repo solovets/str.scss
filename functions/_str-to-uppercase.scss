@@ -9,7 +9,7 @@
 
 @function str-to-uppercase($input-string) {
 
-    $result: '';
+    $result: $input-string;
     $error: '[str.scss] Wront type of `$input-string` argument in str-to-uppercase function';
     $argument-is-correct: check-type($input-string);
 

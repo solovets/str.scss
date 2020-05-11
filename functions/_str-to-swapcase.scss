@@ -8,11 +8,12 @@
 
 @function str-to-swapcase($input-string) {
 
-    $result: '';
+    $result: $input-string;
     $error: '[str.scss] Wront type of `$input-string` argument in str-to-swapcase function';
     $argument-is-correct: check-type($input-string);
 
     @if $argument-is-correct {
+        $result: '';
         $chars: str-chars($input-string);
 
         @each $char in $chars {

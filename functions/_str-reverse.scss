@@ -7,12 +7,23 @@
 ///   // => "dlroW olleH"
 
 @function str-reverse($input-string) {
-    $output-string: '';
-    $chars: str-chars($input-string);
 
-    @for $i from length($chars) through 1 {
-        $output-string: $output-string + nth($chars, $i);
+    $result: $input-string;
+    $error: '[str.scss] Wront type of `$input-string` argument in str-reverse function';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        $chars: str-chars($input-string);
+
+        @for $i from length($chars) through 1 {
+            $result: $result + nth($chars, $i);
+        }
     }
 
-    @return $output-string;
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
+
 }

@@ -10,8 +10,22 @@
 ///   // => "Helllo World _- "
 
 @function str-ltrim($input-string, $trim-chars: ' ') {
-    @return str-slice(
-                    $input-string,
-                    _str-get-not-skipped-char-index($input-string, 'left', $trim-chars)
-    );
+
+    $result: $input-string;
+    $error: '[str.scss] Wront type of `$input-string` argument in str-ltrim function';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        $result: str-slice(
+                        $input-string,
+                        _str-get-not-skipped-char-index($input-string, 'left', $trim-chars)
+        );
+    }
+
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
+
 }

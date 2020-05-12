@@ -13,13 +13,23 @@
 
 @function str-capitalize($input-string, $lowercase-rest: false) {
 
-    @if ($lowercase-rest == true) {
-        $first-item: nth(str-split($input-string), 1);
-        $first-item: _str-capitalize-first(str-to-lowercase($first-item));
-        $input-string: $first-item + str-slice($input-string, str-length($first-item) + 1);
-    } @else {
-        $input-string: _str-capitalize-first($input-string);
+    $result: $input-string;
+    $error: '[str.scss] Wront type of `$input-string` argument in str-capitalize function';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        @if ($lowercase-rest == true) {
+            $first-item: to-upper-case( str-slice($input-string, 1, 1) );
+            $result: $first-item + to-lower-case( str-slice($input-string, 2) );
+        } @else {
+            $result: _str-capitalize-first($input-string);
+        }
     }
 
-    @return $input-string;
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
+
 }

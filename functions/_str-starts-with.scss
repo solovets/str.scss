@@ -14,14 +14,25 @@
 
 @function str-starts-with($input-string, $substring, $ignore-case: false) {
 
-    @if (str-is-blank($substring)) {
-        @return true;
+    $result: false;
+    $error: '[str.scss] Wront type of `$input-string` argument in str-starts-with function';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        @if ($ignore-case) {
+            $input-string: to-lower-case($input-string);
+            $substring: to-lower-case($substring);
+        }
+
+        @if str-slice($input-string, 1, str-length($substring)) == $substring {
+            $result: true;
+        }
     }
 
-    @if ($ignore-case) {
-        $input-string: str-to-lowercase($input-string);
-        $substring: str-to-lowercase($substring);
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
     }
 
-    @return str-slice($input-string, 1, str-length($substring)) == $substring;
 }

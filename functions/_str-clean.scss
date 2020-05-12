@@ -9,13 +9,25 @@
 ///   // => "Hello World"
 
 @function str-clean($input-string) {
-    $input-string: str-trim($input-string);
-    $output-string: '';
-    $items: str-split($input-string);
 
-    @for $i from 1 through length($items) {
-        $output-string: $output-string + if($i == 1, '', ' ') + nth($items, $i);
+    $result: $input-string;
+    $error: '[str.scss] Wront type of `$input-string` argument in str-clean function';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        $result: '';
+        $input-string: str-trim($input-string);
+        $items: str-split($input-string);
+
+        @for $i from 1 through length($items) {
+            $result: $result + if($i == 1, '', ' ') + nth($items, $i);
+        }
     }
 
-    @return $output-string;
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
+
 }

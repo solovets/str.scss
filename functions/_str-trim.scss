@@ -10,9 +10,23 @@
 ///   // => "Hello World"
 
 @function str-trim($input-string, $trim-chars: ' ') {
-    @return str-slice(
-                    $input-string,
-                    _str-get-not-skipped-char-index($input-string, 'left', $trim-chars),
-                    _str-get-not-skipped-char-index($input-string, 'right', $trim-chars)
-    );
+
+    $result: $input-string;
+    $error: '[str.scss] Wront type of `$input-string` argument in str-trim function';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        $result: str-slice(
+                        $input-string,
+                        _str-get-not-skipped-char-index($input-string, 'left', $trim-chars),
+                        _str-get-not-skipped-char-index($input-string, 'right', $trim-chars)
+        );
+    }
+
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
+
 }

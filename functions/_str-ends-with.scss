@@ -15,16 +15,27 @@
 
 @function str-ends-with($input-string, $substring, $ignore-case: false) {
 
-    @if (str-is-blank($substring)) {
-        @return true;
+    $result: false;
+    $error: '[str.scss] Wront type of `$input-string` argument in str-ends-with function';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        @if ($ignore-case) {
+            $input-string: to-lower-case($input-string);
+            $substring: to-lower-case($substring);
+        }
+
+        $start-index: str-length($substring) * -1;
+
+        @if str-slice($input-string, $start-index, -1) == $substring {
+            $result: true;
+        }
     }
 
-    @if ($ignore-case) {
-        $input-string: str-to-lowercase($input-string);
-        $substring: str-to-lowercase($substring);
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
     }
 
-    $start-index: str-length($substring) * -1;
-
-    @return str-slice($input-string, $start-index, -1) == $substring;
 }

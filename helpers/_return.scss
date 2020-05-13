@@ -1,0 +1,7 @@
+@function _return($correct, $result, $error) {
+    @if ($str-scss-strong-type-check and $correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
+}

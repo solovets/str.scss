@@ -1,10 +1,11 @@
 $str-scss-strong-type-check: false !default;
 
 @if type-of($str-scss-strong-type-check) != bool {
-    @error('[str.scss] Global variable `$str-scss-strong-type-check` should have boolean type');
+    @error('[str.scss] Global variable `$str-scss-strong-type-check` must be of type bool');
 }
 
 @import "helpers/check-type";
+@import "helpers/return";
 @import "helpers/str-substring-info";
 @import "helpers/str-get-not-skipped-char-index";
 
@@ -21,9 +22,7 @@ $str-scss-strong-type-check: false !default;
 @import "functions/str-count";
 @import "functions/str-first-index";
 @import "functions/str-last-index";
-@import "functions/str-capitalize-first";
 @import "functions/str-capitalize";
-@import "functions/str-decapitalize-first";
 @import "functions/str-decapitalize";
 @import "functions/str-reverse";
 @import "functions/str-trim";

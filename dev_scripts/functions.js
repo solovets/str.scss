@@ -14,7 +14,6 @@ module.exports = [
     'str-first-index',
     'str-last-index',
     'str-capitalize',
-    '_str-decapitalize-first',
     'str-decapitalize',
     'str-reverse',
     '_str-get-not-skipped-char-index',

@@ -11,11 +11,19 @@
 ///   // => false
 
 @function str-is-blank($input-string) {
-    $input-string: str-trim($input-string);
 
-    @if (str-length($input-string) > 0) {
-        @return false;
+    $result: $input-string;
+    $error: '[str.scss] $input-string of str-is-blank function should be a string';
+    $argument-is-correct: check-type($input-string);
+
+    @if $argument-is-correct {
+        $input-string: str-trim($input-string);
+        $result: if(str-length($input-string) > 0, false, true);
     }
 
-    @return true;
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
 }

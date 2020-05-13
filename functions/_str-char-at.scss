@@ -12,8 +12,8 @@
 @function str-char-at($input-string, $index) {
 
     $result: '';
-    $error: '[str.scss] Wront type of `$input-string` argument in str-char-at function';
-    $argument-is-correct: check-type($input-string);
+    $error: '[str.scss] $input-string of str-char-at function should be a string';
+    $argument-is-correct: check-type($input-string) and check-type($index, number);
 
     @if $argument-is-correct {
         $result: str-slice($input-string, $index, $index);

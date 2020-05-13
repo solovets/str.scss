@@ -63,6 +63,16 @@ Compiled to
 }
 ```
 
+## Global settings
+
+## $str-scss-strong-type-check: boolean
+
+_Dafault_: `false`  
+_Required_: `false`
+
+Use `$str-scss-strong-type-check: true;` to crash compilation each time when any `str.scss` function is provided with argument with wrong type.
+
+
 
 * * * *
 
@@ -110,7 +120,6 @@ Returns an array of strings by separating the string into substrings
 | Argument        | Type     | Required | Default |
 | --------------- | -------- | -------- | ------- |
 | input | string | `+` | `-` |
-| separator | string | `+` | `-` |
 
 **return** `list`
 

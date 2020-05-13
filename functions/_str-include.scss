@@ -8,7 +8,21 @@
 ///   // => true
 
 @function str-include($input-string, $substring) {
-    $substring-info: _str-substring-info($input-string, $substring);
 
-    @return map-get($substring-info, include);
+    $result: false;
+    $error: '[str.scss] $input-string and $substring arguments of str-include function should be strings';
+    $argument-is-correct: check-type($input-string) and check-type($substring);
+
+    @if $argument-is-correct {
+        $substring-info: _str-substring-info($input-string, $substring);
+
+        $result: map-get($substring-info, include);
+    }
+
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
+
 }

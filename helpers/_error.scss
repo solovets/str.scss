@@ -1,0 +1,21 @@
+ @function _error($func, $args...) {
+     $description: '';
+
+     @each $arg in $args {
+         $arg-value: nth($arg, 1);
+         $arg-expected-type: nth($arg, 2);
+         $argument-is-correct: check-type($arg-value, $arg-expected-type);
+
+         @if $argument-is-correct == false {
+             @if type-of($arg-value) == list {
+                 $description: $description + ' One or more items of `#{$arg-value}`` have wrong type. Expected types: `#{$arg-expected-type}`.';
+             } @else {
+                 $description: $description + ' `#{$arg-value}`` must be of type `#{$arg-expected-type}`, got `#{type-of($arg-value)}`.';
+             }
+         }
+
+
+     }
+
+     @return '[str.scss] [#{$func}]' + $description;
+ }

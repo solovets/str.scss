@@ -12,7 +12,21 @@
 ///   // => 3
 
 @function str-count($input-string, $substring) {
-    $substring-info: _str-substring-info($input-string, $substring);
 
-    @return map-get($substring-info, count);
+    $result: false;
+    $error: '[str.scss] $input-string and $substring arguments of str-count function should be strings';
+    $argument-is-correct: check-type($input-string) and check-type($substring);
+
+    @if $argument-is-correct {
+        $substring-info: _str-substring-info($input-string, $substring);
+
+        $result: map-get($substring-info, count);
+    }
+
+    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
+        @return $result;
+    } @else {
+        @error $error;
+    }
+
 }

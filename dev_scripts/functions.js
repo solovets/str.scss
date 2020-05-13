@@ -13,7 +13,6 @@ module.exports = [
     'str-count',
     'str-first-index',
     'str-last-index',
-    '_str-capitalize-first',
     'str-capitalize',
     '_str-decapitalize-first',
     'str-decapitalize',

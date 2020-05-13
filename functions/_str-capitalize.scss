@@ -18,12 +18,9 @@
     $argument-is-correct: check-type($input-string);
 
     @if $argument-is-correct {
-        @if ($lowercase-rest == true) {
-            $first-item: to-upper-case( str-slice($input-string, 1, 1) );
-            $result: $first-item + to-lower-case( str-slice($input-string, 2) );
-        } @else {
-            $result: _str-capitalize-first($input-string);
-        }
+        $first-item: to-upper-case( str-slice($input-string, 1, 1) );
+        $rest: str-slice($input-string, 2);
+        $result: $first-item + if($lowercase-rest == true, to-lower-case($rest), $rest);
     }
 
     @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {

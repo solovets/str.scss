@@ -5,8 +5,6 @@ $str-scss-strong-type-check: false !default;
 }
 
 @import "helpers/check-type";
-@import "helpers/error";
-@import "helpers/return";
 @import "helpers/str-substring-info";
 @import "helpers/str-get-not-skipped-char-index";
 

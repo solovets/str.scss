@@ -9,10 +9,11 @@
 @function str-reverse($input-string) {
 
     $result: $input-string;
-    $error: '[str.scss] Wront type of `$input-string` argument in str-reverse function';
+    $error: '';
     $argument-is-correct: check-type($input-string);
 
     @if $argument-is-correct {
+        $result: '';
         $chars: str-chars($input-string);
 
         @for $i from length($chars) through 1 {
@@ -20,10 +21,6 @@
         }
     }
 
-    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
-        @return $result;
-    } @else {
-        @error $error;
-    }
+    @return _return($argument-is-correct, $result, $error);
 
 }

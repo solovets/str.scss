@@ -12,7 +12,7 @@
 @function str-first-index($input-string, $substring) {
 
     $result: false;
-    $error: '[str.scss] $input-string and $substring arguments of str-first-index function should be strings';
+    $error: '';
     $argument-is-correct: check-type($input-string) and check-type($substring);
 
     @if $argument-is-correct {
@@ -21,10 +21,6 @@
         $result: map-get($substring-info, first-index);
     }
 
-    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
-        @return $result;
-    } @else {
-        @error $error;
-    }
+    @return _return($argument-is-correct, $result, $error);
 
 }

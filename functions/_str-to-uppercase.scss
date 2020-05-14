@@ -10,17 +10,13 @@
 @function str-to-uppercase($input-string) {
 
     $result: $input-string;
-    $error: '[str.scss] Wront type of `$input-string` argument in str-to-uppercase function';
+    $error: '';
     $argument-is-correct: check-type($input-string);
 
     @if $argument-is-correct {
         $result: to-upper-case($input-string);
     }
 
-    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
-        @return $result;
-    } @else {
-        @error $error;
-    }
+    @return _return($argument-is-correct, $result, $error);
 
 }

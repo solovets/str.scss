@@ -15,7 +15,7 @@
 @function str-starts-with($input-string, $substring, $ignore-case: false) {
 
     $result: false;
-    $error: '[str.scss] Wront type of `$input-string` argument in str-starts-with function';
+    $error: '';
     $argument-is-correct: check-type($input-string);
 
     @if $argument-is-correct {
@@ -29,10 +29,6 @@
         }
     }
 
-    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
-        @return $result;
-    } @else {
-        @error $error;
-    }
+    @return _return($argument-is-correct, $result, $error);
 
 }

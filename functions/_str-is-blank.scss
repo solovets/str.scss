@@ -13,7 +13,7 @@
 @function str-is-blank($input-string) {
 
     $result: $input-string;
-    $error: '[str.scss] $input-string of str-is-blank function should be a string';
+    $error: '';
     $argument-is-correct: check-type($input-string);
 
     @if $argument-is-correct {
@@ -21,9 +21,5 @@
         $result: if(str-length($input-string) > 0, false, true);
     }
 
-    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
-        @return $result;
-    } @else {
-        @error $error;
-    }
+    @return _return($argument-is-correct, $result, $error);
 }

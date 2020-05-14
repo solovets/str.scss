@@ -12,7 +12,7 @@
 @function str-trim($input-string, $trim-chars: ' ') {
 
     $result: $input-string;
-    $error: '[str.scss] $input-string and $trim-chars arguments of str-trim function should be strings';
+    $error: '';
     $argument-is-correct: check-type($input-string) and check-type($trim-chars);
 
     @if $argument-is-correct {
@@ -23,10 +23,6 @@
         );
     }
 
-    @if ($str-scss-strong-type-check and $argument-is-correct) or not $str-scss-strong-type-check {
-        @return $result;
-    } @else {
-        @error $error;
-    }
+    @return _return($argument-is-correct, $result, $error);
 
 }

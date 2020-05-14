@@ -2,7 +2,7 @@
 /// Returns character from input string at provided index
 /// @param {string} $input-string - input string
 /// @param {number} $index - index of required char
-/// @return {string}
+/// @return {string} $input-string, $index ## empty string
 /// @example
 ///   @debug str-char-at('Hello World', 2);
 ///   // => "e"
@@ -13,10 +13,12 @@
 
     $result: '';
     $error: '';
-    $argument-is-correct: check-type($input-string);
+    $argument-is-correct: check-type($input-string) and check-type($index, number);
 
     @if $argument-is-correct {
         $result: str-slice($input-string, $index, $index);
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-char-at', ($input-string, string), ($index, number));
     }
 
     @return _return($argument-is-correct, $result, $error);

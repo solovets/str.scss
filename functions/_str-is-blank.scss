@@ -1,7 +1,7 @@
 /// #str-is-blank($input-string) => boolean
 /// Returns true if string is empty or contains whitespaces only
 /// @param {string} $input-string
-/// @return {boolean}
+/// @return {boolean} $input-string ## null
 /// @example
 ///   @debug str-is-blank('');
 ///   // => true
@@ -12,13 +12,15 @@
 
 @function str-is-blank($input-string) {
 
-    $result: $input-string;
+    $result: null;
     $error: '';
     $argument-is-correct: check-type($input-string);
 
     @if $argument-is-correct {
         $input-string: str-trim($input-string);
         $result: if(str-length($input-string) > 0, false, true);
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-is-blank', ($input-string, string));
     }
 
     @return _return($argument-is-correct, $result, $error);

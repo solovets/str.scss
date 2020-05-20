@@ -3,7 +3,7 @@
 /// @param {string} $input-string
 /// @param {number} $times [1]
 /// @param {string} $separate-with ['']
-/// @return {string}
+/// @return {string} $input-string, $times, $separator ## $input-string
 /// @example
 ///   @debug str-repeat('Hello');
 ///   // => "Hello"
@@ -16,14 +16,16 @@
 
     $result: $input-string;
     $error: '';
-    $argument-is-correct: check-type($input-string);
+    $argument-is-correct: check-type($input-string) and check-type($times, number) and check-type($separator, (string, number));
 
     @if $argument-is-correct {
         $result: '';
 
         @for $i from 1 through $times {
-            $result: $result + if($i == 1, '', $separator) + $result;
+            $result: $result + if($i == 1, '', $separator) + $input-string;
         }
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-repeat', ($input-string, string), ($times, number), ($separator, (string, number)));
     }
 
     @return _return($argument-is-correct, $result, $error);

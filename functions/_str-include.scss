@@ -2,14 +2,14 @@
 /// Returns boolean result of check if string contains a substring.
 /// @param {string} $input-string
 /// @param {string} $substring
-/// @return {boolean} $input-string, $substring ## false
+/// @return {boolean} $input-string, $substring ## null
 /// @example
 ///   @debug str-include('Hello World', 'lo');
 ///   // => true
 
 @function str-include($input-string, $substring) {
 
-    $result: false;
+    $result: null;
     $error: '';
     $argument-is-correct: check-type($input-string) and check-type($substring);
 

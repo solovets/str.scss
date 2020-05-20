@@ -1,7 +1,7 @@
 /// #str-decapitalize($input-string) => string
 /// Returns string with decapitalized first letter
 /// @param {string} $input-string
-/// @return {string}
+/// @return {string} $input-string ## $input-string
 /// @example
 ///   @debug str-decapitalize('Hello World');
 ///   // => "hello World"
@@ -17,6 +17,8 @@
     @if $argument-is-correct {
         $first-item: to-lower-case( str-slice($input-string, 1, 1) );
         $result: $first-item + str-slice($input-string, 2);
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-decapitalize', ($input-string, string));
     }
 
     @return _return($argument-is-correct, $result, $error);

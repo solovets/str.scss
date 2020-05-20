@@ -1,7 +1,11 @@
-@function check-type($input, $type: string) {
+@function check-type($input, $type: string, $check-if-list: false) {
 
     $inputs: ();
     $types: ();
+
+    @if $check-if-list and type-of($input) != list {
+        @return false;
+    }
 
     $inputs: if(type-of($input) != list, append($inputs, $input), $input);
     $types:  if(type-of($type) != list,  append($types, $type),   $type);

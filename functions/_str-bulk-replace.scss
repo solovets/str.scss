@@ -4,7 +4,7 @@
 /// @param {list} $substrings - substrings to search in input string
 /// @param {string} $replace [''] - string to be inserted instead of substrings
 /// @param {boolean} $g [true] - global flag
-/// @return {string}
+/// @return {string} $input-string, $substrings, $replace ## $input-string
 /// @example
 ///   @debug str-bulk-replace('Hello world', ('l', 'o'), '*');
 ///   // => "He*** w*r*d"
@@ -16,7 +16,7 @@
 @function str-bulk-replace($input-string, $substrings, $replace: '', $g: true) {
 
     @each $substring in $substrings {
-        $input-string: str-replace($input-string, $substring, $replace, $g);
+        $input-string: str-replace($input-string, $substring, $replace, $g, true);
     }
 
     @return $input-string;

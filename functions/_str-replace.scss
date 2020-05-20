@@ -13,7 +13,7 @@
 ///   @debug str-replace('Hello world', 'Hello', 'Privet');
 ///   // => "Privet world"
 
-@function str-replace($input-string, $substring, $replace: '', $g: true) {
+@function str-replace($input-string, $substring, $replace: '', $g: true, $is-bulk: false) {
 
     $result: $input-string;
     $error: '';
@@ -30,7 +30,7 @@
             }
         }
     } @else if $argument-is-correct == false and $str-scss-strong-type-check {
-        $error: _error('str-replace', ($input-string, string), ($substring, string), ($replace, (string, number)));
+        $error: _error('str#{if($is-bulk,'-bulk','')}-replace', ($input-string, string), ($substring, string), ($replace, (string, number)));
     }
 
     @return _return($argument-is-correct, $result, $error);

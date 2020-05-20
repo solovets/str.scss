@@ -4,7 +4,7 @@
 /// @param {string} $substring
 /// @param {string} $replace ['']
 /// @param {boolean} $g [true]
-/// @return {string}
+/// @return {string} $input-string, $substring, $replace ## $input-string
 /// @example
 ///   @debug str-replace('Hello world', 'l');
 ///   // => "Heo word"
@@ -17,18 +17,20 @@
 
     $result: $input-string;
     $error: '';
-    $argument-is-correct: check-type($input-string);
+    $argument-is-correct: check-type($input-string) and check-type($substring) and check-type($replace, (string, number));
 
     @if $argument-is-correct {
         $index: str-index($result, $substring);
 
         @if $index {
             @if $g {
-                @return str-slice($result, 1, $index - 1) + $replace + str-replace(str-slice($result, $index + str-length($substring)), $substring, $replace);
+                $result: str-slice($result, 1, $index - 1) + $replace + str-replace(str-slice($result, $index + str-length($substring)), $substring, $replace);
             } @else {
-                @return str-slice($result, 1, $index - 1) + $replace + str-slice($result, $index + str-length($substring));
+                $result: str-slice($result, 1, $index - 1) + $replace + str-slice($result, $index + str-length($substring));
             }
         }
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-replace', ($input-string, string), ($substring, string), ($replace, (string, number)));
     }
 
     @return _return($argument-is-correct, $result, $error);

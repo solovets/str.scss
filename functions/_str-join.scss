@@ -2,7 +2,7 @@
 /// Returns input list converted to a string
 /// @param {list} $input-list
 /// @param {string} $separator ['']
-/// @return {string}
+/// @return {string} $input-list, $separator ## ''
 /// @example
 ///   @debug str-join((1, '. ', 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'));
 ///   // => "1. Hello World"
@@ -13,14 +13,18 @@
 
     $result: '';
     $error: '';
-    $argument-is-correct: check-type($input-list, (string, number));
+    $argument-is-correct: check-type($input-list, (string, number), true) and check-type($separator);
 
     @if $argument-is-correct {
+
         @each $item in $input-list {
-            @if type-of($item) == string or type-of($item) == number {
-                $output-string: $result + if(index($input-list, $item) != 1, $separator, '') + $item;
-            }
+            $result: $result + if(index($input-list, $item) != 1, $separator, '') + $item;
         }
+    } @else if check-type($separator) and (type-of($input-list) == string or type-of($input-list) == number) {
+        $argument-is-correct: true;
+        $result: $result + $input-list;
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-join', ($input-list, (string, number)), ($separator, string));
     }
 
     @return _return($argument-is-correct, $result, $error);

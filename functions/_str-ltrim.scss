@@ -2,7 +2,7 @@
 /// Returns string with removed leading characters.
 /// @param {string} $input-string
 /// @param {string} $trim-chars [' ']
-/// @return {string}
+/// @return {string} $input-string, $trim-chars ## $input-string
 /// @example
 ///   @debug str-ltrim(' Hello World ');
 ///   // => "Hello World "
@@ -20,6 +20,8 @@
                         $input-string,
                         _str-get-not-skipped-char-index($input-string, 'left', $trim-chars)
         );
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-ltrim', ($input-string, string), ($trim-chars, string));
     }
 
     @return _return($argument-is-correct, $result, $error);

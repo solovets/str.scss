@@ -2,7 +2,7 @@
 /// Returns string with removed trailing characters.
 /// @param {string} $input-string
 /// @param {string} $trim-chars [' ']
-/// @return {string}
+/// @return {string} $input-string, $trim-chars ## $input-string
 /// @example
 ///   @debug str-rtrim(' Hello World ');
 ///   // => " Hello World"
@@ -21,6 +21,8 @@
                         1,
                         _str-get-not-skipped-char-index($input-string, 'right', $trim-chars)
         );
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-rtrim', ($input-string, string), ($trim-chars, string));
     }
 
     @return _return($argument-is-correct, $result, $error);

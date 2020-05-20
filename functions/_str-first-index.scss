@@ -2,7 +2,7 @@
 /// Returns first index of substring in provided string
 /// @param {string} $input-string
 /// @param {string} $substring
-/// @return {number}
+/// @return {number} $input-string, $substring ## 0
 /// @example
 ///   @debug str-first-index('Hello World', 'l');
 ///   // => 3
@@ -11,7 +11,7 @@
 
 @function str-first-index($input-string, $substring) {
 
-    $result: false;
+    $result: 0;
     $error: '';
     $argument-is-correct: check-type($input-string) and check-type($substring);
 
@@ -19,6 +19,8 @@
         $substring-info: _str-substring-info($input-string, $substring);
 
         $result: map-get($substring-info, first-index);
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-first-index', ($input-string, string), ($substring, string));
     }
 
     @return _return($argument-is-correct, $result, $error);

@@ -2,7 +2,7 @@
 /// Returns boolean result of check if string contains a substring.
 /// @param {string} $input-string
 /// @param {string} $substring
-/// @return {boolean}
+/// @return {boolean} $input-string, $substring ## false
 /// @example
 ///   @debug str-include('Hello World', 'lo');
 ///   // => true
@@ -17,6 +17,8 @@
         $substring-info: _str-substring-info($input-string, $substring);
 
         $result: map-get($substring-info, include);
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-include', ($input-string, string), ($substring, string));
     }
 
     @return _return($argument-is-correct, $result, $error);

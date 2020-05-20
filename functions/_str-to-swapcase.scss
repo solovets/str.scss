@@ -1,7 +1,7 @@
 /// #str-to-swapcase($input-string) => string
 /// Returns a copy of the string in which all the case-based characters have had their case swapped.
 /// @param {string} $input-string
-/// @return {string}
+/// @return {string} $input-string ## $input-string
 /// @example
 ///   @debug str-to-swapcase('hELLO wORLD');
 ///   // => "Hello World"
@@ -23,6 +23,8 @@
                 $result: $result + str-to-uppercase($char);
             }
         }
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-to-swapcase', ($input-string, string));
     }
 
     @return _return($argument-is-correct, $result, $error);

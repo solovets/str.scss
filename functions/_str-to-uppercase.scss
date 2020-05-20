@@ -2,7 +2,7 @@
 /// Returns the calling string value converted to uppercase
 /// Alias for to-upper-case String SASS built-in function
 /// @param {string} $input-string
-/// @return {string}
+/// @return {string} $input-string ## $input-string
 /// @example
 ///   @debug str-to-uppercase('hello world');
 ///   // => "HELLO WORLD"
@@ -15,6 +15,8 @@
 
     @if $argument-is-correct {
         $result: to-upper-case($input-string);
+    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+        $error: _error('str-to-uppercase', ($input-string, string));
     }
 
     @return _return($argument-is-correct, $result, $error);

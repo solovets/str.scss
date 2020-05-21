@@ -1,11 +1,11 @@
-/// #_str-substring-info($input-string, $substring) => map
+/// #_substring-info($input-string, $substring) => map
 /// Returns map with information about $substring in $input-string: quantity, first index and last index
 /// @access private
 /// @param {string} $input-string
 /// @param {string} $substring
 /// @return {map}
 
-@function _str-substring-info($input-string, $substring) {
+@function _substring-info($input-string, $substring) {
 
     $count: 0;
     $first-index: null;

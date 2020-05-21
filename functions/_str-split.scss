@@ -25,7 +25,7 @@
             $index: str-index($input-string, $separator);
 
             @if (str-length($item) != 0) {
-                $list: append($result, $item);
+                $result: append($result, $item);
             }
         }
 

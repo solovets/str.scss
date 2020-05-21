@@ -55,5 +55,5 @@ $str-scss-strong-type-check: true;
 @debug str-capitalize('hello wold');
 // => Hello wold
 @debug str-capitalize(123);
-// => Error: "[str.scss] Wront type of `$input-string` argument in str-capitalize function"
+// => Error: "[str.scss] [str-capitalize] `123` must be of type `string`, got `number`."
 ```

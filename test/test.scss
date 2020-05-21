@@ -72,19 +72,14 @@
 @debug("str-bulk-replace('Hello world', ('l', 'o'), $g: false);");
 @debug str-bulk-replace('Hello world', ('l', 'o'), $g: false);
 
-@debug("str-bulk-replace('Hello To The world', ('Hello', 'To The'), 'Privet');");
-@debug str-bulk-replace('Hello To The world', ('Hello', 'To The'), 'Privet');
+@debug("str-bulk-replace('Hello To The mir', ('Hello', 'To The'), 'Privet');");
+@debug str-bulk-replace('Hello To The mir', ('Hello', 'To The'), 'Privet');
 
 @debug('-----------------------------------');
 @debug('public function str-include');
 
 @debug("str-include('Hello World', 'lo');");
 @debug str-include('Hello World', 'lo');
-
-@debug('-----------------------------------');
-@debug('private function _str-substring-info');
-
-@debug('WARNING! _STR-SUBSTRING-INFO DOES NOT HAVE TEST');
 
 @debug('-----------------------------------');
 @debug('public function str-count');
@@ -95,8 +90,8 @@
 @debug("str-count('Hello World', 'l');");
 @debug str-count('Hello World', 'l');
 
-@debug("str-count('Hello World Hello World Hello World', 'ello');");
-@debug str-count('Hello World Hello World Hello World', 'ello');
+@debug("str-count('Hello World', 'ello');");
+@debug str-count('Hello World', 'ello');
 
 @debug('-----------------------------------');
 @debug('public function str-first-index');
@@ -117,28 +112,13 @@
 @debug str-last-index('Hello World', 'z');
 
 @debug('-----------------------------------');
-@debug('private function _str-capitalize-first');
-
-@debug("_str-capitalize-first('hello wold');");
-@debug _str-capitalize-first('hello wold');
-
-@debug('-----------------------------------');
 @debug('public function str-capitalize');
 
-@debug("str-capitalize('hello wold');");
-@debug str-capitalize('hello wold');
+@debug("str-capitalize('hello Wold');");
+@debug str-capitalize('hello Wold');
 
-@debug("str-capitalize('hELLO wold');");
-@debug str-capitalize('hELLO wold');
-
-@debug("str-capitalize('hELLO wold', true);");
-@debug str-capitalize('hELLO wold', true);
-
-@debug('-----------------------------------');
-@debug('private function _str-decapitalize-first');
-
-@debug("_str-decapitalize-first('Hello Wold');");
-@debug _str-decapitalize-first('Hello Wold');
+@debug("str-capitalize('hELLO WORLD', true);");
+@debug str-capitalize('hELLO WORLD', true);
 
 @debug('-----------------------------------');
 @debug('public function str-decapitalize');
@@ -146,22 +126,11 @@
 @debug("str-decapitalize('Hello World');");
 @debug str-decapitalize('Hello World');
 
-@debug("str-decapitalize('HELLO WORLD');");
-@debug str-decapitalize('HELLO WORLD');
-
-@debug("str-decapitalize('HELLO world', true);");
-@debug str-decapitalize('HELLO world', true);
-
 @debug('-----------------------------------');
 @debug('public function str-reverse');
 
 @debug("str-reverse('Hello World');");
 @debug str-reverse('Hello World');
-
-@debug('-----------------------------------');
-@debug('private function _str-get-not-skipped-char-index');
-
-@debug('WARNING! _STR-GET-NOT-SKIPPED-CHAR-INDEX DOES NOT HAVE TEST');
 
 @debug('-----------------------------------');
 @debug('public function str-trim');
@@ -193,9 +162,6 @@
 @debug('-----------------------------------');
 @debug('public function str-clean');
 
-@debug("str-clean('Hello  World');");
-@debug str-clean('Hello  World');
-
 @debug("str-clean('  Hello  World   ');");
 @debug str-clean('  Hello  World   ');
 
@@ -226,14 +192,14 @@
 @debug('-----------------------------------');
 @debug('public function str-ends-with');
 
-@debug("str-starts-with('Hello World', 'Hel');");
-@debug str-starts-with('Hello World', 'Hel');
+@debug("str-ends-with('Hello World', 'rld');");
+@debug str-ends-with('Hello World', 'rld');
 
-@debug("str-starts-with('Hello World', 'hel');");
-@debug str-starts-with('Hello World', 'hel');
+@debug("str-ends-with('Hello World', 'RLD');");
+@debug str-ends-with('Hello World', 'RLD');
 
-@debug("str-starts-with('Hello World', 'hel', true);");
-@debug str-starts-with('Hello World', 'hel', true);
+@debug("str-ends-with('Hello World', 'RLD', true);");
+@debug str-ends-with('Hello World', 'RLD', true);
 
 @debug('-----------------------------------');
 @debug('public function str-repeat');

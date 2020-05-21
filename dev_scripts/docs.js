@@ -1,5 +1,5 @@
 const sassdoc = require('sassdoc');
-const functions = require('./docs-functions');
+const functions = require('./scss-functions');
 const fs = require('fs');
 const pkg = require('../package');
 const docsFileWrite = require('./docs-write-file');

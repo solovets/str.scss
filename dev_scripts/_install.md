@@ -4,6 +4,8 @@
 npm install str.scss
 ```
 
+[Github Gist](https://gist.github.com/solovets/0021d71ba4871411481fb91f9a086103) with all str.scss functions in one file.
+
 ## Usage
 
 

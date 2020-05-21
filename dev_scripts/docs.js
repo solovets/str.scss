@@ -1,7 +1,8 @@
 const sassdoc = require('sassdoc');
-const functions = require('./functions');
+const functions = require('./docs-functions');
 const fs = require('fs');
 const pkg = require('../package');
+const docsFileWrite = require('./docs-write-file');
 
 sassdoc.parse([
     './_str.scss', './functions/*.scss'
@@ -66,6 +67,12 @@ sassdoc.parse([
             if (result[item].hasOwnProperty('example')) {
                 content += '**Example**\n\n```scss\n' + result[item].example[0].code + '\n```\n\n';
             }
+
+            // Add Error handling
+            if (result[item].return.hasOwnProperty('description')) {
+                content += '***Errors handling***\n\nArguments to be checked: `' + result[item].return.description.split(' ## ')[0] + '`.\n\n';
+                content += 'In case of error and when `$str-scss-strong-type-check` is set to `false` function returns `' + result[item].return.description.split(' ## ')[1] + '`.\n\n';
+            }
         }
 
         // Create tests
@@ -86,13 +93,7 @@ sassdoc.parse([
 
     const install = '\n* * * *\n\n' + fs.readFileSync('./dev_scripts/_install.md', 'utf8');
 
-    fs.writeFile("README.md", contents + install + content, function(error) {
-        if(error) throw error;
-        console.log('README.md updated');
-    });
+    docsFileWrite('README.md', contents + install + content);
+    docsFileWrite('./test/test.scss', tests);
 
-    fs.writeFile('./test/test.scss', tests, function(error) {
-        if(error) throw error;
-        console.log('test/test.scss updated');
-    });
 });

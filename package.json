@@ -1,11 +1,12 @@
 {
   "name": "str.scss",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "str.scss - set of functions that helps to manipulate strings.",
   "main": "_str.scss",
   "scripts": {
     "test": "sass ./test/test.scss ./test/test.css",
-    "docs": "node dev_scripts/docs.js"
+    "docs": "node dev_scripts/docs.js",
+    "gist": "node dev_scripts/gist.js"
   },
   "repository": {
     "type": "git",
@@ -48,6 +49,10 @@
   },
   "homepage": "https://github.com/solovets/str.scss#readme",
   "devDependencies": {
-    "sassdoc": "^2.7.0"
+    "sassdoc": "^2.7.0",
+    "concat-files": "^0.1.1"
+  },
+  "dependencies": {
+
   }
 }

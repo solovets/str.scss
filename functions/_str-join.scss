@@ -20,9 +20,6 @@
         @each $item in $input-list {
             $result: $result + if(index($input-list, $item) != 1, $separator, '') + $item;
         }
-    } @else if _check-type($separator) and (type-of($input-list) == string or type-of($input-list) == number) {
-        $argument-is-correct: true;
-        $result: $result + $input-list;
     } @else if $argument-is-correct == false and $str-scss-strong-type-check {
         $error: _error('str-join', ($input-list, (string, number)), ($separator, string));
     }

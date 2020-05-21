@@ -10,7 +10,7 @@
 
     $result: ();
     $error: '';
-    $argument-is-correct: check-type($input-string);
+    $argument-is-correct: _check-type($input-string);
 
     @if $argument-is-correct {
         @for $i from 1 through str-length($input-string) {

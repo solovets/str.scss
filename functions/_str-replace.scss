@@ -17,7 +17,7 @@
 
     $result: $input-string;
     $error: '';
-    $argument-is-correct: check-type($input-string) and check-type($substring) and check-type($replace, (string, number));
+    $argument-is-correct: _check-type($input-string) and _check-type($substring) and _check-type($replace, (string, number));
 
     @if $argument-is-correct {
         $index: str-index($result, $substring);

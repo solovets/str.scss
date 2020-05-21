@@ -12,7 +12,7 @@
 
     $result: $input-string;
     $error: '';
-    $argument-is-correct: check-type($input-string);
+    $argument-is-correct: _check-type($input-string);
 
     @if $argument-is-correct {
         $first-item: to-lower-case( str-slice($input-string, 1, 1) );

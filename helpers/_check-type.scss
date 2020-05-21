@@ -1,4 +1,4 @@
-@function check-type($input, $type: string, $check-if-list: false) {
+@function _check-type($input, $type: string, $check-if-list: false) {
 
     $inputs: ();
     $types: ();

@@ -13,14 +13,14 @@
 
     $result: '';
     $error: '';
-    $argument-is-correct: check-type($input-list, (string, number), true) and check-type($separator);
+    $argument-is-correct: _check-type($input-list, (string, number), true) and _check-type($separator);
 
     @if $argument-is-correct {
 
         @each $item in $input-list {
             $result: $result + if(index($input-list, $item) != 1, $separator, '') + $item;
         }
-    } @else if check-type($separator) and (type-of($input-list) == string or type-of($input-list) == number) {
+    } @else if _check-type($separator) and (type-of($input-list) == string or type-of($input-list) == number) {
         $argument-is-correct: true;
         $result: $result + $input-list;
     } @else if $argument-is-correct == false and $str-scss-strong-type-check {

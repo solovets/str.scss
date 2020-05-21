@@ -15,7 +15,7 @@
 
     $result: 0;
     $error: '';
-    $argument-is-correct: check-type($input-string) and check-type($substring);
+    $argument-is-correct: _check-type($input-string) and _check-type($substring);
 
     @if $argument-is-correct {
         $substring-info: _str-substring-info($input-string, $substring);

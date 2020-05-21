@@ -14,7 +14,7 @@
 
     $result: null;
     $error: '';
-    $argument-is-correct: check-type($input-string);
+    $argument-is-correct: _check-type($input-string);
 
     @if $argument-is-correct {
         $input-string: str-trim($input-string);

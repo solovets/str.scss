@@ -13,7 +13,7 @@
 
     $result: ();
     $error: '';
-    $argument-is-correct: check-type($input-string) and check-type($separator);
+    $argument-is-correct: _check-type($input-string) and _check-type($separator);
 
     @if $argument-is-correct {
         $index: str-index($input-string, $separator);

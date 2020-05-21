@@ -13,7 +13,7 @@
 
     $result: '';
     $error: '';
-    $argument-is-correct: check-type($input-string) and check-type($index, number);
+    $argument-is-correct: _check-type($input-string) and _check-type($index, number);
 
     @if $argument-is-correct {
         $result: str-slice($input-string, $index, $index);

@@ -16,7 +16,7 @@
 
     $result: null;
     $error: '';
-    $argument-is-correct: check-type($input-string) and check-type($substring);
+    $argument-is-correct: _check-type($input-string) and _check-type($substring);
 
     @if $argument-is-correct {
         @if ($ignore-case) {

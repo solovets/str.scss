@@ -4,7 +4,7 @@
      @each $arg in $args {
          $arg-value: nth($arg, 1);
          $arg-expected-type: nth($arg, 2);
-         $argument-is-correct: check-type($arg-value, $arg-expected-type);
+         $argument-is-correct: _check-type($arg-value, $arg-expected-type);
 
          @if $argument-is-correct == false {
              @if type-of($arg-value) == list {

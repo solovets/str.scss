@@ -8,8 +8,8 @@
 ///   // => 0
 ///   @debug str-count('Hello World', 'l');
 ///   // => 3
-///   @debug str-count('Hello World Hello World Hello World', 'ello');
-///   // => 3
+///   @debug str-count('Hello World', 'ello');
+///   // => 1
 
 @function str-count($input-string, $substring) {
 

@@ -2,7 +2,7 @@
 /// Returns character from input string at provided index
 /// @param {string} $input-string - input string
 /// @param {number} $index - index of required char
-/// @return {string} $input-string, $index ## empty string
+/// @return {string} $input-string, $index ## ''
 /// @example
 ///   @debug str-char-at('Hello World', 2);
 ///   // => "e"

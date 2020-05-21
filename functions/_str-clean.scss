@@ -3,8 +3,6 @@
 /// @param {string} $input-string - input string
 /// @return {string} $input-string ## $input-string
 /// @example
-///   @debug str-clean('Hello  World');
-///   // => "Hello World"
 ///   @debug str-clean('  Hello  World   ');
 ///   // => "Hello World"
 

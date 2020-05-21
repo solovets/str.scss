@@ -4,12 +4,10 @@
 /// @param {boolean} $lowercase-rest [false]
 /// @return {string} $input-string ## $input-string
 /// @example
-///   @debug str-capitalize('hello wold');
-///   // => "Hello wold"
-///   @debug str-capitalize('hELLO wold');
-///   // => "HELLO wold"
-///   @debug str-capitalize('hELLO wold', true);
-///   // => "Hello wold"
+///   @debug str-capitalize('hello Wold');
+///   // => "Hello Wold"
+///   @debug str-capitalize('hELLO WORLD', true);
+///   // => "Hello world"
 
 @function str-capitalize($input-string, $lowercase-rest: false) {
 

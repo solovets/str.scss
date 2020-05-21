@@ -10,8 +10,8 @@
 ///   // => "He*** w*r*d"
 ///   @debug str-bulk-replace('Hello world', ('l', 'o'), $g: false);
 ///   // => "Hel world"
-///   @debug str-bulk-replace('Hello To The world', ('Hello', 'To The'), 'Privet');
-///   // => "Privet Privet world"
+///   @debug str-bulk-replace('Hello To The mir', ('Hello', 'To The'), 'Privet');
+///   // => "Privet Privet mir"
 
 @function str-bulk-replace($input-string, $substrings, $replace: '', $g: true) {
 

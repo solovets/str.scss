@@ -2,7 +2,7 @@
 /// Returns an array of strings by separating the string into substrings
 /// @param {string} $input-string - input string
 /// @param {string} $separator [' '] - separator to split on
-/// @return {list} $input-string, $separator ## empty list
+/// @return {list} $input-string, $separator ## ()
 /// @example
 ///   @debug str-split('Hello World');
 ///   // => ("Hello" "World")

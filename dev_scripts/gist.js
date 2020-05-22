@@ -18,13 +18,19 @@ for (let i = 0; i < functions.length; i++) {
 
 const gistPath = path.join(process.cwd(), '../str.scss.gist/_str.scss');
 
-const gistIntro = '// ' + pkg.name + ' | v. ' + pkg.version + ' | ' + pkg.license + ' license\n' +
+let gistIntro = '// ' + pkg.name + ' | v. ' + pkg.version + ' | ' + pkg.license + ' license\n' +
     '// ' + pkg.description + '\n' +
     '//\n' +
     '// Homepage: ' + pkg.homepage + '\n' +
     '// Report an issue: ' + pkg.bugs.url + '\n' +
     '// Author: ' + pkg.author + '\n' +
     '// This file is always up to date.\n\n';
+
+gistIntro += '$str-scss-strong-type-check: false !default;\n' +
+    '\n' +
+    '@if type-of($str-scss-strong-type-check) != bool {\n' +
+    '    @error(\'[str.scss] Global variable `$str-scss-strong-type-check` must be of type bool\');\n' +
+    '}\n\n';
 
 fs.writeFile('./dev_scripts/_gist.scss', gistIntro, function (error) {
     if (error) throw error;

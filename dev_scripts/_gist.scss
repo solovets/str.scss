@@ -6,3 +6,9 @@
 // Author: Denis Solovets
 // This file is always up to date.
 
+$str-scss-strong-type-check: false !default;
+
+@if type-of($str-scss-strong-type-check) != bool {
+    @error('[str.scss] Global variable `$str-scss-strong-type-check` must be of type bool');
+}
+

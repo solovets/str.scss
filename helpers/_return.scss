@@ -1,3 +1,11 @@
+/// #_return($correct, $result, $error) => @return | @error
+/// Returns @return or @error directive for function
+/// @access private
+/// @param {bool} $correct - boolean value that shows if parent function has an error
+/// @param {any} $result - result of parent function to be returned
+/// @param {string} $error - description of errors in parent function
+/// @return {@return | @error}
+
 @function _return($correct, $result, $error) {
     @if ($str-scss-strong-type-check and $correct) or not $str-scss-strong-type-check {
         @return $result;

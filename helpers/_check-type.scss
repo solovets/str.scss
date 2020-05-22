@@ -1,3 +1,11 @@
+/// #_check-type($input[, $type, $check-if-list]) => bool
+/// Checks if provided $input has required type
+/// @access private
+/// @param {any} $input - any value to check it's type
+/// @param {string | list} $type ['string'] - allowed types of $input
+/// @param {bool} $check-if-list [false] - checks that provided $input is a list
+/// @return {bool}
+
 @function _check-type($input, $type: string, $check-if-list: false) {
 
     $inputs: ();

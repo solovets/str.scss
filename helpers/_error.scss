@@ -1,4 +1,11 @@
- @function _error($func, $args...) {
+/// #_error($func, $args...) => string
+/// Returns a string with error description to be thrown as an error
+/// @access private
+/// @param {string} $func - name of function that requires error description
+/// @param {list} $args... - lists of parent function variables to be checked: ($variable-value, $variable-required-type)
+/// @return {string}
+
+@function _error($func, $args...) {
      $description: '';
 
      @each $arg in $args {

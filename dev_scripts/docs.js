@@ -71,7 +71,7 @@ sassdoc.parse([
             // Add Error handling
             if (result[item].return.hasOwnProperty('description')) {
                 content += '***Errors handling***\n\nArguments to be checked: `' + result[item].return.description.split(' ## ')[0] + '`.\n\n';
-                content += 'In case of error and `$str-scss-strong-type-check` is set to `false` function returns `' + result[item].return.description.split(' ## ')[1] + '`.\n\n';
+                content += 'In case of error and `$str-scss-strong-type-check` is set to `false` function returns `' + result[item].return.description.split(' ## ')[1] + '`.\n* * * *\n\n';
             }
         }
 

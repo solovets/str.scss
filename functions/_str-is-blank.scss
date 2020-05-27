@@ -19,7 +19,7 @@
     @if $argument-is-correct {
         $input-string: str-trim($input-string);
         $result: if(str-length($input-string) > 0, false, true);
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-is-blank', ($input-string, string));
     }
 

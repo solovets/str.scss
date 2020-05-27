@@ -16,7 +16,7 @@
         @for $i from 1 through str-length($input-string) {
             $result: append($result, str-slice($input-string, $i, $i));
         }
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-chars', ($input-string, string));
     }
 

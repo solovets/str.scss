@@ -17,7 +17,7 @@
 
     @if $argument-is-correct {
         $result: str-slice($input-string, $index, $index);
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-char-at', ($input-string, string), ($index, number));
     }
 

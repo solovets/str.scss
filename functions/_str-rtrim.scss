@@ -21,7 +21,7 @@
                         1,
                         _str-get-not-skipped-char-index($input-string, 'right', $trim-chars)
         );
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-rtrim', ($input-string, string), ($trim-chars, string));
     }
 

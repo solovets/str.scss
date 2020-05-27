@@ -23,7 +23,7 @@
                 $result: $result + str-to-uppercase($char);
             }
         }
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-to-swapcase', ($input-string, string));
     }
 

@@ -21,7 +21,7 @@
         $substring-info: _substring-info($input-string, $substring);
 
         $result: map-get($substring-info, count);
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-count', ($input-string, string), ($substring, string));
     }
 

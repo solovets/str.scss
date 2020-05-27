@@ -15,7 +15,7 @@
     @if $argument-is-correct {
         $first-item: to-lower-case( str-slice($input-string, 1, 1) );
         $result: $first-item + str-slice($input-string, 2);
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-decapitalize', ($input-string, string));
     }
 

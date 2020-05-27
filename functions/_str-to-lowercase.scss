@@ -15,7 +15,7 @@
 
     @if $argument-is-correct {
         $result: to-lower-case($input-string);
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-to-lowercase', ($input-string, string));
     }
 

@@ -20,7 +20,7 @@
                         $input-string,
                         _str-get-not-skipped-char-index($input-string, 'left', $trim-chars)
         );
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-ltrim', ($input-string, string), ($trim-chars, string));
     }
 

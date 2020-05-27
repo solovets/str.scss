@@ -17,7 +17,7 @@
         $substring-info: _substring-info($input-string, $substring);
 
         $result: map-get($substring-info, include);
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-include', ($input-string, string), ($substring, string));
     }
 

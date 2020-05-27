@@ -30,7 +30,7 @@
         }
 
         $result: append($result, $input-string);
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-split', ($input-string, string), ($separator, string));
     }
 

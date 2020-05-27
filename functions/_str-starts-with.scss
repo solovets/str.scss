@@ -26,7 +26,7 @@
 
         $result: if(str-slice($input-string, 1, str-length($substring)) == $substring, true, false);
 
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-starts-with', ($input-string, string), ($substring, string));
     }
 

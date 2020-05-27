@@ -24,7 +24,7 @@
         @for $i from 1 through $times {
             $result: $result + if($i == 1, '', $separator) + $input-string;
         }
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-repeat', ($input-string, string), ($times, number), ($separator, (string, number)));
     }
 

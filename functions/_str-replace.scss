@@ -29,7 +29,7 @@
                 $result: str-slice($result, 1, $index - 1) + $replace + str-slice($result, $index + str-length($substring));
             }
         }
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str#{if($is-bulk,'-bulk','')}-replace', ($input-string, string), ($substring, string), ($replace, (string, number)));
     }
 

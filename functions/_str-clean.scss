@@ -20,7 +20,7 @@
         @for $i from 1 through length($items) {
             $result: $result + if($i == 1, '', ' ') + nth($items, $i);
         }
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-clean', ($input-string, string));
     }
 

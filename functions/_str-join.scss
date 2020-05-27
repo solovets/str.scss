@@ -20,7 +20,7 @@
         @each $item in $input-list {
             $result: $result + if(index($input-list, $item) != 1, $separator, '') + $item;
         }
-    } @else if $argument-is-correct == false and $str-scss-strong-type-check {
+    } @else {
         $error: _error('str-join', ($input-list, (string, number)), ($separator, string));
     }
 

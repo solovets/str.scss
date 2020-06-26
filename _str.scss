@@ -14,8 +14,6 @@ $str-scss-strong-type-check: false !default;
 @import "functions/str-char-at";
 @import "functions/str-split";
 @import "functions/str-join";
-@import "functions/str-to-uppercase";
-@import "functions/str-to-lowercase";
 @import "functions/str-to-swapcase";
 @import "functions/str-replace";
 @import "functions/str-bulk-replace";
@@ -35,3 +33,9 @@ $str-scss-strong-type-check: false !default;
 @import "functions/str-ends-with";
 @import "functions/str-repeat";
 
+@import "functions/str-to-uppercase";
+@import "functions/str-to-lowercase";
+@import "functions/str-to-uppercase";
+@import "functions/str-quote";
+@import "functions/str-unique-id";
+@import "functions/str-unquote";

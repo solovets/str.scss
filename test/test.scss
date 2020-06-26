@@ -1,14 +1,12 @@
 @import "../str";
 
 @debug('-----------------------------------');
-@debug('public function str-chars');
-
+@debug('function str-chars');
 @debug("str-chars('Hello world');");
 @debug str-chars('Hello world');
 
 @debug('-----------------------------------');
-@debug('public function str-char-at');
-
+@debug('function str-char-at');
 @debug("str-char-at('Hello World', 2);");
 @debug str-char-at('Hello World', 2);
 
@@ -16,8 +14,7 @@
 @debug str-char-at('Hello World', -4);
 
 @debug('-----------------------------------');
-@debug('public function str-split');
-
+@debug('function str-split');
 @debug("str-split('Hello World');");
 @debug str-split('Hello World');
 
@@ -25,8 +22,7 @@
 @debug str-split('Hello World, Hello World', ', ');
 
 @debug('-----------------------------------');
-@debug('public function str-join');
-
+@debug('function str-join');
 @debug("str-join((1, '. ', 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'));");
 @debug str-join((1, '. ', 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'));
 
@@ -34,26 +30,12 @@
 @debug str-join(('a', 'b', 'c'), '*');
 
 @debug('-----------------------------------');
-@debug('public function str-to-uppercase');
-
-@debug("str-to-uppercase('hello world');");
-@debug str-to-uppercase('hello world');
-
-@debug('-----------------------------------');
-@debug('public function str-to-lowercase');
-
-@debug("str-to-lowercase('Hello World');");
-@debug str-to-lowercase('Hello World');
-
-@debug('-----------------------------------');
-@debug('public function str-to-swapcase');
-
+@debug('function str-to-swapcase');
 @debug("str-to-swapcase('hELLO wORLD');");
 @debug str-to-swapcase('hELLO wORLD');
 
 @debug('-----------------------------------');
-@debug('public function str-replace');
-
+@debug('function str-replace');
 @debug("str-replace('Hello world', 'l');");
 @debug str-replace('Hello world', 'l');
 
@@ -64,8 +46,7 @@
 @debug str-replace('Hello world', 'Hello', 'Privet');
 
 @debug('-----------------------------------');
-@debug('public function str-bulk-replace');
-
+@debug('function str-bulk-replace');
 @debug("str-bulk-replace('Hello world', ('l', 'o'), '*');");
 @debug str-bulk-replace('Hello world', ('l', 'o'), '*');
 
@@ -76,14 +57,12 @@
 @debug str-bulk-replace('Hello To The mir', ('Hello', 'To The'), 'Privet');
 
 @debug('-----------------------------------');
-@debug('public function str-include');
-
+@debug('function str-include');
 @debug("str-include('Hello World', 'lo');");
 @debug str-include('Hello World', 'lo');
 
 @debug('-----------------------------------');
-@debug('public function str-count');
-
+@debug('function str-count');
 @debug("str-count('Hello World', 'z');");
 @debug str-count('Hello World', 'z');
 
@@ -94,8 +73,7 @@
 @debug str-count('Hello World', 'ello');
 
 @debug('-----------------------------------');
-@debug('public function str-first-index');
-
+@debug('function str-first-index');
 @debug("str-first-index('Hello World', 'l');");
 @debug str-first-index('Hello World', 'l');
 
@@ -103,8 +81,7 @@
 @debug str-first-index('Hello World', 'z');
 
 @debug('-----------------------------------');
-@debug('public function str-last-index');
-
+@debug('function str-last-index');
 @debug("str-last-index('Hello World', 'l');");
 @debug str-last-index('Hello World', 'l');
 
@@ -112,8 +89,7 @@
 @debug str-last-index('Hello World', 'z');
 
 @debug('-----------------------------------');
-@debug('public function str-capitalize');
-
+@debug('function str-capitalize');
 @debug("str-capitalize('hello Wold');");
 @debug str-capitalize('hello Wold');
 
@@ -121,20 +97,17 @@
 @debug str-capitalize('hELLO WORLD', true);
 
 @debug('-----------------------------------');
-@debug('public function str-decapitalize');
-
+@debug('function str-decapitalize');
 @debug("str-decapitalize('Hello World');");
 @debug str-decapitalize('Hello World');
 
 @debug('-----------------------------------');
-@debug('public function str-reverse');
-
+@debug('function str-reverse');
 @debug("str-reverse('Hello World');");
 @debug str-reverse('Hello World');
 
 @debug('-----------------------------------');
-@debug('public function str-trim');
-
+@debug('function str-trim');
 @debug("str-trim(' Hello World ');");
 @debug str-trim(' Hello World ');
 
@@ -142,8 +115,7 @@
 @debug str-trim(' -_ Helllo World _- ', '- _');
 
 @debug('-----------------------------------');
-@debug('public function str-ltrim');
-
+@debug('function str-ltrim');
 @debug("str-ltrim(' Hello World ');");
 @debug str-ltrim(' Hello World ');
 
@@ -151,8 +123,7 @@
 @debug str-ltrim(' -_ Helllo World _- ', '- _');
 
 @debug('-----------------------------------');
-@debug('public function str-rtrim');
-
+@debug('function str-rtrim');
 @debug("str-rtrim(' Hello World ');");
 @debug str-rtrim(' Hello World ');
 
@@ -160,14 +131,12 @@
 @debug str-rtrim(' -_ Helllo World _- ', '- _');
 
 @debug('-----------------------------------');
-@debug('public function str-clean');
-
+@debug('function str-clean');
 @debug("str-clean('  Hello  World   ');");
 @debug str-clean('  Hello  World   ');
 
 @debug('-----------------------------------');
-@debug('public function str-is-blank');
-
+@debug('function str-is-blank');
 @debug("str-is-blank('');");
 @debug str-is-blank('');
 
@@ -178,8 +147,7 @@
 @debug str-is-blank('Hello World');
 
 @debug('-----------------------------------');
-@debug('public function str-starts-with');
-
+@debug('function str-starts-with');
 @debug("str-starts-with('Hello World', 'Hel');");
 @debug str-starts-with('Hello World', 'Hel');
 
@@ -190,8 +158,7 @@
 @debug str-starts-with('Hello World', 'hel', true);
 
 @debug('-----------------------------------');
-@debug('public function str-ends-with');
-
+@debug('function str-ends-with');
 @debug("str-ends-with('Hello World', 'rld');");
 @debug str-ends-with('Hello World', 'rld');
 
@@ -202,8 +169,7 @@
 @debug str-ends-with('Hello World', 'RLD', true);
 
 @debug('-----------------------------------');
-@debug('public function str-repeat');
-
+@debug('function str-repeat');
 @debug("str-repeat('Hello');");
 @debug str-repeat('Hello');
 
@@ -212,4 +178,29 @@
 
 @debug("str-repeat('Hello', 2, ', ');");
 @debug str-repeat('Hello', 2, ', ');
+
+@debug('-----------------------------------');
+@debug('function str-to-uppercase');
+@debug("str-to-uppercase('hello world');");
+@debug str-to-uppercase('hello world');
+
+@debug('-----------------------------------');
+@debug('function str-to-lowercase');
+@debug("str-to-lowercase('Hello World');");
+@debug str-to-lowercase('Hello World');
+
+@debug('-----------------------------------');
+@debug('function str-quote');
+@debug("str-quote(Hello);");
+@debug str-quote(Hello);
+
+@debug('-----------------------------------');
+@debug('function str-unique-id');
+@debug("str-unique-id();");
+@debug str-unique-id();
+
+@debug('-----------------------------------');
+@debug('function str-unquote');
+@debug("str-unquote('.link:hover');");
+@debug str-unquote('.link:hover');
 

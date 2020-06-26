@@ -1,34 +1,6 @@
-# str.scss
+# str.scss ![npm](https://img.shields.io/npm/v/str.scss)  ![GitHub Release Date](https://img.shields.io/github/release-date/solovets/str.scss)
 
 str.scss - set of functions that helps to manipulate strings.
-
-* * * *
-Contents:
-
-+ [str-chars](#str-charsinput-string--list) Returns SCSS list with all string characters.
-+ [str-char-at](#str-char-atinput-string-index--string) Returns character from input string at provided index
-+ [str-split](#str-splitinput-string-separator--list) Returns an array of strings by separating the string into substrings
-+ [str-join](#str-joininput-list-separator--string) Returns input list converted to a string
-+ [str-to-uppercase](#str-to-uppercaseinput-string--string) Returns the calling string value converted to uppercase
-+ [str-to-lowercase](#str-to-lowercaseinput-string--string) Returns the calling string value converted to lowercase
-+ [str-to-swapcase](#str-to-swapcaseinput-string--string) Returns a copy of the string in which all the case-based characters have had their case swapped.
-+ [str-replace](#str-replaceinput-string-substring-replace-g--string) Returns copy of input string where defined substring replaced by $replace argument
-+ [str-bulk-replace](#str-bulk-replaceinput-string-substrings-replace-g--string) Returns copy of input string where defined substrings replaced by $replace argument
-+ [str-include](#str-includeinput-string-substring--boolean) Returns boolean result of check if string contains a substring.
-+ [str-count](#str-countinput-string-substring--number) Returns number of occurrences of substring in string.
-+ [str-first-index](#str-first-indexinput-string-substring--number) Returns first index of substring in provided string
-+ [str-last-index](#str-last-indexinput-string-substring--number) Returns last index of substring in provided string
-+ [str-capitalize](#str-capitalizeinput-string-lowercase-rest--string) Returns string with capitalized first letter
-+ [str-decapitalize](#str-decapitalizeinput-string--string) Returns string with decapitalized first letter
-+ [str-reverse](#str-reverseinput-string--string) Returns reversed string.
-+ [str-trim](#str-triminput-string-trim-chars--string) Returns trimmed string
-+ [str-ltrim](#str-ltriminput-string-trim-chars--string) Returns string with removed leading characters.
-+ [str-rtrim](#str-rtriminput-string-trim-chars--string) Returns string with removed trailing characters.
-+ [str-clean](#str-cleaninput-string--string) Returns trimmed string with multiply spaces replaced with single space
-+ [str-is-blank](#str-is-blankinput-string--boolean) Returns true if string is empty or contains whitespaces only
-+ [str-starts-with](#str-starts-withinput-string-substring-ignore-case--boolean) Returns true if string starts with provided substring
-+ [str-ends-with](#str-ends-withinput-string-substring-ignore-case--boolean) Returns true if string ends with provided substring
-+ [str-repeat](#str-repeatinput-string-times-separator--string) Returns input string repeated provided number of times
 
 * * * *
 
@@ -46,7 +18,6 @@ npm install str.scss
 
 ## Usage
 
-
 ```scss
 @import "~node_modules/str.scss/str";
 
@@ -56,7 +27,7 @@ $section-name: 'Hello World';
     &__title {
         &::after {
             content: str-to-uppercase($section-name)
-        }    
+        }
     }
 }
 ```
@@ -64,14 +35,49 @@ $section-name: 'Hello World';
 Compiled to
 
 ```css
-.hello-world__title:after {
-    content: "HELLO WORLD";
-}
+            .hello-world__title:after {
+                content: "HELLO WORLD";
+            }
 ```
+
+**Functions**
+
+ + [str-chars](#str-charsinput-string--list) Returns SCSS list with all string characters.
+ + [str-char-at](#str-char-atinput-string-index--string) Returns character from input string at provided index
+ + [str-split](#str-splitinput-string-separator--list) Returns an array of strings by separating the string into substrings
+ + [str-join](#str-joininput-list-separator--string) Returns input list converted to a string
+ + [str-to-swapcase](#str-to-swapcaseinput-string--string) Returns a copy of the string in which all the case-based characters have had their case swapped.
+ + [str-replace](#str-replaceinput-string-substring-replace-g--string) Returns copy of input string where defined substring replaced by $replace argument
+ + [str-bulk-replace](#str-bulk-replaceinput-string-substrings-replace-g--string) Returns copy of input string where defined substrings replaced by $replace argument
+ + [str-include](#str-includeinput-string-substring--boolean) Returns boolean result of check if string contains a substring.
+ + [str-count](#str-countinput-string-substring--number) Returns number of occurrences of substring in string.
+ + [str-first-index](#str-first-indexinput-string-substring--number) Returns first index of substring in provided string
+ + [str-last-index](#str-last-indexinput-string-substring--number) Returns last index of substring in provided string
+ + [str-capitalize](#str-capitalizeinput-string-lowercase-rest--string) Returns string with capitalized first letter
+ + [str-decapitalize](#str-decapitalizeinput-string--string) Returns string with decapitalized first letter
+ + [str-reverse](#str-reverseinput-string--string) Returns reversed string.
+ + [str-trim](#str-triminput-string-trim-chars--string) Returns trimmed string
+ + [str-ltrim](#str-ltriminput-string-trim-chars--string) Returns string with removed leading characters.
+ + [str-rtrim](#str-rtriminput-string-trim-chars--string) Returns string with removed trailing characters.
+ + [str-clean](#str-cleaninput-string--string) Returns trimmed string with multiply spaces replaced with single space
+ + [str-is-blank](#str-is-blankinput-string--boolean) Returns true if string is empty or contains whitespaces only
+ + [str-starts-with](#str-starts-withinput-string-substring-ignore-case--boolean) Returns true if string starts with provided substring
+ + [str-ends-with](#str-ends-withinput-string-substring-ignore-case--boolean) Returns true if string ends with provided substring
+ + [str-repeat](#str-repeatinput-string-times-separator--string) Returns input string repeated provided number of times
+
+**Aliases**
+
+ + [str-to-uppercase](#str-to-uppercaseinput-string--string) Returns the calling string value converted to uppercase
+ + [str-to-lowercase](#str-to-lowercaseinput-string--string) Returns the calling string value converted to lowercase
+ + [str-quote](#str-quoteinput-string--string) Returns $input-string as quoted string
+ + [str-unique-id](#str-unique-id--string) Returns a randomly-generated unquoted string
+ + [str-unquote](#str-unquoteinput-string--string) Returns $input-string as unquoted string
+
+* * * *
 
 ## Global settings
 
-## $str-scss-strong-type-check: boolean
+### $str-scss-strong-type-check: boolean
 
 _Dafault_: `false`  
 _Required_: `false`
@@ -98,9 +104,9 @@ $str-scss-strong-type-check: true;
 // => Error: "[str.scss] [str-capitalize] `123` must be of type `string`, got `number`."
 ```
 
-* * * *
+## Functions
 
-## str-chars($input-string) => list
+### str-chars($input-string) => list
 
 Returns SCSS list with all string characters.
 
@@ -108,7 +114,7 @@ Returns SCSS list with all string characters.
 | --------------- | -------- | -------- | ------- |
 | input-string | string | `+` | `-` |
 
-**return** `list`
+**return** list
 
 **Example**
 
@@ -122,9 +128,10 @@ Returns SCSS list with all string characters.
 Arguments to be checked: `$input-string`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `()`.
+
 * * * *
 
-## str-char-at($input-string, $index) => string
+### str-char-at($input-string, $index) => string
 
 Returns character from input string at provided index
 
@@ -133,7 +140,7 @@ Returns character from input string at provided index
 | input-string | string | `+` | `-` |
 | index | number | `+` | `-` |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -149,9 +156,10 @@ Returns character from input string at provided index
 Arguments to be checked: `$input-string, $index`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `''`.
+
 * * * *
 
-## str-split($input-string[, $separator]) => list
+### str-split($input-string[, $separator]) => list
 
 Returns an array of strings by separating the string into substrings
 
@@ -160,7 +168,7 @@ Returns an array of strings by separating the string into substrings
 | input-string | string | `+` | `-` |
 | separator | string | `-` | ' ' |
 
-**return** `list`
+**return** list
 
 **Example**
 
@@ -176,9 +184,10 @@ Returns an array of strings by separating the string into substrings
 Arguments to be checked: `$input-string, $separator`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `()`.
+
 * * * *
 
-## str-join($input-list[, $separator]) => string
+### str-join($input-list[, $separator]) => string
 
 Returns input list converted to a string
 
@@ -187,7 +196,7 @@ Returns input list converted to a string
 | input-list | list | `+` | `-` |
 | separator | string | `-` | '' |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -203,61 +212,10 @@ Returns input list converted to a string
 Arguments to be checked: `$input-list, $separator`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `''`.
+
 * * * *
 
-## str-to-uppercase($input-string) => string
-
-Returns the calling string value converted to uppercase
-
-_Alias for to-upper-case String SASS built-in function_
-
-| Argument        | Type     | Required | Default |
-| --------------- | -------- | -------- | ------- |
-| input-string | string | `+` | `-` |
-
-**return** `string`
-
-**Example**
-
-```scss
-@debug str-to-uppercase('hello world');
-// => "HELLO WORLD"
-```
-
-***Errors handling***
-
-Arguments to be checked: `$input-string`.
-
-In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
-* * * *
-
-## str-to-lowercase($input-string) => string
-
-Returns the calling string value converted to lowercase
-
-_Alias for to-lower-case String SASS built-in function_
-
-| Argument        | Type     | Required | Default |
-| --------------- | -------- | -------- | ------- |
-| input-string | string | `+` | `-` |
-
-**return** `string`
-
-**Example**
-
-```scss
-@debug str-to-lowercase('Hello World');
-// => "hello world"
-```
-
-***Errors handling***
-
-Arguments to be checked: `$input-string`.
-
-In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
-* * * *
-
-## str-to-swapcase($input-string) => string
+### str-to-swapcase($input-string) => string
 
 Returns a copy of the string in which all the case-based characters have had their case swapped.
 
@@ -265,7 +223,7 @@ Returns a copy of the string in which all the case-based characters have had the
 | --------------- | -------- | -------- | ------- |
 | input-string | string | `+` | `-` |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -279,9 +237,10 @@ Returns a copy of the string in which all the case-based characters have had the
 Arguments to be checked: `$input-string`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
 
-## str-replace($input-string, $substring[, $replace, $g]) => string
+### str-replace($input-string, $substring[, $replace, $g]) => string
 
 Returns copy of input string where defined substring replaced by $replace argument
 
@@ -292,7 +251,7 @@ Returns copy of input string where defined substring replaced by $replace argume
 | replace | string | `-` | '' |
 | g | boolean | `-` | true |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -310,9 +269,10 @@ Returns copy of input string where defined substring replaced by $replace argume
 Arguments to be checked: `$input-string, $substring, $replace`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
 
-## str-bulk-replace($input-string, $substrings[, $replace, $g]) => string
+### str-bulk-replace($input-string, $substrings[, $replace, $g]) => string
 
 Returns copy of input string where defined substrings replaced by $replace argument
 
@@ -323,7 +283,7 @@ Returns copy of input string where defined substrings replaced by $replace argum
 | replace | string | `-` | '' |
 | g | boolean | `-` | true |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -341,9 +301,10 @@ Returns copy of input string where defined substrings replaced by $replace argum
 Arguments to be checked: `$input-string, $substrings, $replace`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
 
-## str-include($input-string, $substring) => boolean
+### str-include($input-string, $substring) => boolean
 
 Returns boolean result of check if string contains a substring.
 
@@ -352,7 +313,7 @@ Returns boolean result of check if string contains a substring.
 | input-string | string | `+` | `-` |
 | substring | string | `+` | `-` |
 
-**return** `boolean`
+**return** boolean
 
 **Example**
 
@@ -366,9 +327,10 @@ Returns boolean result of check if string contains a substring.
 Arguments to be checked: `$input-string, $substring`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `null`.
+
 * * * *
 
-## str-count($input-string, $substring) => number
+### str-count($input-string, $substring) => number
 
 Returns number of occurrences of substring in string.
 
@@ -377,7 +339,7 @@ Returns number of occurrences of substring in string.
 | input-string | string | `+` | `-` |
 | substring | string | `+` | `-` |
 
-**return** `number`
+**return** number
 
 **Example**
 
@@ -395,9 +357,10 @@ Returns number of occurrences of substring in string.
 Arguments to be checked: `$input-string, $substring`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `0`.
+
 * * * *
 
-## str-first-index($input-string, $substring) => number
+### str-first-index($input-string, $substring) => number
 
 Returns first index of substring in provided string
 
@@ -406,7 +369,7 @@ Returns first index of substring in provided string
 | input-string | string | `+` | `-` |
 | substring | string | `+` | `-` |
 
-**return** `number`
+**return** number
 
 **Example**
 
@@ -422,9 +385,10 @@ Returns first index of substring in provided string
 Arguments to be checked: `$input-string, $substring`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `null`.
+
 * * * *
 
-## str-last-index($input-string, $substring) => number
+### str-last-index($input-string, $substring) => number
 
 Returns last index of substring in provided string
 
@@ -433,7 +397,7 @@ Returns last index of substring in provided string
 | input-string | string | `+` | `-` |
 | substring | string | `+` | `-` |
 
-**return** `number`
+**return** number
 
 **Example**
 
@@ -449,9 +413,10 @@ Returns last index of substring in provided string
 Arguments to be checked: `$input-string, $substring`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `null`.
+
 * * * *
 
-## str-capitalize($input-string[, $lowercase-rest]) => string
+### str-capitalize($input-string[, $lowercase-rest]) => string
 
 Returns string with capitalized first letter
 
@@ -460,7 +425,7 @@ Returns string with capitalized first letter
 | input-string | string | `+` | `-` |
 | lowercase-rest | boolean | `-` | false |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -476,9 +441,10 @@ Returns string with capitalized first letter
 Arguments to be checked: `$input-string`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
 
-## str-decapitalize($input-string) => string
+### str-decapitalize($input-string) => string
 
 Returns string with decapitalized first letter
 
@@ -486,7 +452,7 @@ Returns string with decapitalized first letter
 | --------------- | -------- | -------- | ------- |
 | input-string | string | `+` | `-` |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -500,9 +466,10 @@ Returns string with decapitalized first letter
 Arguments to be checked: `$input-string`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
 
-## str-reverse($input-string) => string
+### str-reverse($input-string) => string
 
 Returns reversed string.
 
@@ -510,7 +477,7 @@ Returns reversed string.
 | --------------- | -------- | -------- | ------- |
 | input-string | string | `+` | `-` |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -524,9 +491,10 @@ Returns reversed string.
 Arguments to be checked: `$input-string`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
 
-## str-trim($input-string[, $trim-chars]) => string
+### str-trim($input-string[, $trim-chars]) => string
 
 Returns trimmed string
 
@@ -535,7 +503,7 @@ Returns trimmed string
 | input-string | string | `+` | `-` |
 | trim-chars | string | `-` | ' ' |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -551,9 +519,10 @@ Returns trimmed string
 Arguments to be checked: `$input-string, $trim-chars`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
 
-## str-ltrim($input-string[, $trim-chars]) => string
+### str-ltrim($input-string[, $trim-chars]) => string
 
 Returns string with removed leading characters.
 
@@ -562,7 +531,7 @@ Returns string with removed leading characters.
 | input-string | string | `+` | `-` |
 | trim-chars | string | `-` | ' ' |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -578,9 +547,10 @@ Returns string with removed leading characters.
 Arguments to be checked: `$input-string, $trim-chars`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
 
-## str-rtrim($input-string[, $trim-chars]) => string
+### str-rtrim($input-string[, $trim-chars]) => string
 
 Returns string with removed trailing characters.
 
@@ -589,7 +559,7 @@ Returns string with removed trailing characters.
 | input-string | string | `+` | `-` |
 | trim-chars | string | `-` | ' ' |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -605,9 +575,10 @@ Returns string with removed trailing characters.
 Arguments to be checked: `$input-string, $trim-chars`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
 
-## str-clean($input-string) => string
+### str-clean($input-string) => string
 
 Returns trimmed string with multiply spaces replaced with single space
 
@@ -615,7 +586,7 @@ Returns trimmed string with multiply spaces replaced with single space
 | --------------- | -------- | -------- | ------- |
 | input-string | string | `+` | `-` |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -629,9 +600,10 @@ Returns trimmed string with multiply spaces replaced with single space
 Arguments to be checked: `$input-string`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
 
-## str-is-blank($input-string) => boolean
+### str-is-blank($input-string) => boolean
 
 Returns true if string is empty or contains whitespaces only
 
@@ -639,7 +611,7 @@ Returns true if string is empty or contains whitespaces only
 | --------------- | -------- | -------- | ------- |
 | input-string | string | `+` | `-` |
 
-**return** `boolean`
+**return** boolean
 
 **Example**
 
@@ -657,9 +629,10 @@ Returns true if string is empty or contains whitespaces only
 Arguments to be checked: `$input-string`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `null`.
+
 * * * *
 
-## str-starts-with($input-string, $substring[, $ignore-case]) => boolean
+### str-starts-with($input-string, $substring[, $ignore-case]) => boolean
 
 Returns true if string starts with provided substring
 
@@ -669,7 +642,7 @@ Returns true if string starts with provided substring
 | substring | string | `+` | `-` |
 | ignore-case | boolean | `+` | `-` |
 
-**return** `boolean`
+**return** boolean
 
 **Example**
 
@@ -687,9 +660,10 @@ Returns true if string starts with provided substring
 Arguments to be checked: `$input-string, $substring`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `null`.
+
 * * * *
 
-## str-ends-with($input-string, $substring[, $ignore-case]) => boolean
+### str-ends-with($input-string, $substring[, $ignore-case]) => boolean
 
 Returns true if string ends with provided substring
 
@@ -699,7 +673,7 @@ Returns true if string ends with provided substring
 | substring | string | `+` | `-` |
 | ignore-case | boolean | `-` | false |
 
-**return** `boolean`
+**return** boolean
 
 **Example**
 
@@ -717,9 +691,10 @@ Returns true if string ends with provided substring
 Arguments to be checked: `$input-string, $substring`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `null`.
+
 * * * *
 
-## str-repeat($input-string[, $times, $separator]) => string
+### str-repeat($input-string[, $times, $separator]) => string
 
 Returns input string repeated provided number of times
 
@@ -729,7 +704,7 @@ Returns input string repeated provided number of times
 | times | number | `-` | 1 |
 | separate-with | string | `-` | '' |
 
-**return** `string`
+**return** string
 
 **Example**
 
@@ -747,5 +722,129 @@ Returns input string repeated provided number of times
 Arguments to be checked: `$input-string, $times, $separator`.
 
 In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
+## Aliases
+
+### str-to-uppercase($input-string) => string
+
+Returns the calling string value converted to uppercase
+
+_Alias for to-upper-case String SASS built-in function_
+
+| Argument        | Type     | Required | Default |
+| --------------- | -------- | -------- | ------- |
+| input-string | string | `+` | `-` |
+
+**return** string
+
+**Example**
+
+```scss
+@debug str-to-uppercase('hello world');
+// => "HELLO WORLD"
+```
+
+***Errors handling***
+
+Arguments to be checked: `$input-string`.
+
+In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
 * * * *
+
+### str-to-lowercase($input-string) => string
+
+Returns the calling string value converted to lowercase
+
+_Alias for to-lower-case String SASS built-in function_
+
+| Argument        | Type     | Required | Default |
+| --------------- | -------- | -------- | ------- |
+| input-string | string | `+` | `-` |
+
+**return** string
+
+**Example**
+
+```scss
+@debug str-to-lowercase('Hello World');
+// => "hello world"
+```
+
+***Errors handling***
+
+Arguments to be checked: `$input-string`.
+
+In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
+* * * *
+
+### str-quote($input-string) => string
+
+Returns $input-string as quoted string
+
+_Alias for quote String SASS built-in function_
+
+| Argument        | Type     | Required | Default |
+| --------------- | -------- | -------- | ------- |
+| input-string | string | `+` | `-` |
+
+**return** string
+
+**Example**
+
+```scss
+@debug str-quote(Hello);
+// => "Hello"
+```
+
+***Errors handling***
+
+Arguments to be checked: `$input-string`.
+
+In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
+
+* * * *
+
+### str-unique-id() => string
+
+Returns a randomly-generated unquoted string
+
+_Alias for unique-id String SASS built-in function_
+
+**return** string
+
+**Example**
+
+```scss
+@debug str-unique-id();
+// => e.g. "ufl6i52"
+```
+
+* * * *
+
+### str-unquote($input-string) => string
+
+Returns $input-string as unquoted string
+
+_Alias for unquote String SASS built-in function_
+
+| Argument        | Type     | Required | Default |
+| --------------- | -------- | -------- | ------- |
+| input-string | string | `+` | `-` |
+
+**return** string
+
+**Example**
+
+```scss
+@debug str-unquote('.link:hover');
+// => .link:hover
+```
+
+***Errors handling***
+
+Arguments to be checked: `$input-string`.
+
+In case of error and `$str-scss-strong-type-check` is set to `false` function returns `$input-string`.
 

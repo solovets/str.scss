@@ -1,0 +1,13 @@
+/// #str-unique-id() => string
+/// Returns a randomly-generated unquoted string
+/// Alias for unique-id String SASS built-in function
+/// @return {string}
+/// @example
+///   @debug str-unique-id();
+///   // => e.g. "ufl6i52"
+
+@function str-unique-id() {
+
+    @return unique-id();
+
+}

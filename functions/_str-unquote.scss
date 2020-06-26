@@ -1,0 +1,24 @@
+/// #str-unquote($input-string) => string
+/// Returns $input-string as unquoted string
+/// Alias for unquote String SASS built-in function
+/// @param {string} $input-string
+/// @return {string} $input-string ## $input-string
+/// @example
+///   @debug str-unquote('.link:hover');
+///   // => .link:hover
+
+@function str-unquote($input-string) {
+
+    $result: $input-string;
+    $error: '';
+    $argument-is-correct: _check-type($input-string);
+
+    @if $argument-is-correct {
+        $result: unquote($input-string);
+    } @else {
+        $error: _error('str-unquote', ($input-string, string));
+    }
+
+    @return _return($argument-is-correct, $result, $error);
+
+}

@@ -4,9 +4,9 @@ const fs = require('fs');
 
 const pkg = require('../package');
 const helpers = require('./scss-helpers');
-const functions = require('./scss-functions');
+const functions = require('./docs-data/scss-functions');
 
-const files = ['./dev_scripts/_gist.scss'];
+const files = ['./scripts/_gist.scss'];
 
 for (let i = 0; i < helpers.length; i++) {
     files.push('./helpers/_' + helpers[i] + '.scss');
@@ -32,7 +32,7 @@ gistIntro += '$str-scss-strong-type-check: false !default;\n' +
     '    @error(\'[str.scss] Global variable `$str-scss-strong-type-check` must be of type bool\');\n' +
     '}\n\n';
 
-fs.writeFile('./dev_scripts/_gist.scss', gistIntro, function (error) {
+fs.writeFile('./scripts/_gist.scss', gistIntro, function (error) {
     if (error) throw error;
     concat(files, gistPath, function(err) {
         if (err) throw err;

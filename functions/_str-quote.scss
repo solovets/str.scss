@@ -1,0 +1,24 @@
+/// #str-quote($input-string) => string
+/// Returns $input-string as quoted string
+/// Alias for quote String SASS built-in function
+/// @param {string} $input-string
+/// @return {string} $input-string ## $input-string
+/// @example
+///   @debug str-quote(Hello);
+///   // => "Hello"
+
+@function str-quote($input-string) {
+
+    $result: $input-string;
+    $error: '';
+    $argument-is-correct: _check-type($input-string);
+
+    @if $argument-is-correct {
+        $result: quote($input-string);
+    } @else {
+        $error: _error('str-quote', ($input-string, string));
+    }
+
+    @return _return($argument-is-correct, $result, $error);
+
+}

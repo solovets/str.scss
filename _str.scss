@@ -33,9 +33,9 @@ $str-scss-strong-type-check: false !default;
 @import "functions/str-ends-with";
 @import "functions/str-repeat";
 
-@import "functions/str-to-uppercase";
-@import "functions/str-to-lowercase";
-@import "functions/str-to-uppercase";
+@import "functions/str-to-upper-case";
+@import "functions/str-to-lower-case";
+@import "functions/str-to-upper-case";
 @import "functions/str-quote";
 @import "functions/str-unique-id";
 @import "functions/str-unquote";

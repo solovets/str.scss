@@ -1,13 +1,13 @@
-/// #str-to-lowercase($input-string) => string
+/// #str-to-lower-case($input-string) => string
 /// Returns the calling string value converted to lowercase
 /// Alias for to-lower-case String SASS built-in function
 /// @param {string} $input-string
 /// @return {string} $input-string ## $input-string
 /// @example
-///   @debug str-to-lowercase('Hello World');
+///   @debug str-to-lower-case('Hello World');
 ///   // => "hello world"
 
-@function str-to-lowercase($input-string) {
+@function str-to-lower-case($input-string) {
 
     $result: $input-string;
     $error: '';
@@ -16,7 +16,7 @@
     @if $argument-is-correct {
         $result: to-lower-case($input-string);
     } @else {
-        $error: _error('str-to-lowercase', ($input-string, string));
+        $error: _error('str-to-lower-case', ($input-string, string));
     }
 
     @return _return($argument-is-correct, $result, $error);

@@ -11,6 +11,7 @@ module.exports = function(data, names, type) {
 
     let contents = '**' + title + '**' + NL;
     let readme = '## ' + title + NL;
+    let keywords = [];
 
     names.forEach((name, index) => {
         if (data.hasOwnProperty(name) && data[name].access === 'public') {
@@ -75,6 +76,12 @@ module.exports = function(data, names, type) {
             }
 
 
+            // add keyword
+            keywords.push(
+                name.replace(/^str-/, '')
+            );
+
+
         }
     });
 
@@ -82,6 +89,7 @@ module.exports = function(data, names, type) {
 
     return {
         contents: contents,
-        readme: readme
+        readme: readme,
+        keywords: keywords
     };
 };

@@ -6,6 +6,9 @@ const pkg = require('../package');
 const createDocs = require('./docs-functions/create-docs');
 const createTests = require('./docs-functions/create-tests');
 const writeFile = require('./docs-functions/write-file');
+const release = require('./docs-functions/release');
+
+const args = process.argv.slice(2);
 
 sassdoc.parse([
     './_str.scss', './functions/*.scss'
@@ -20,6 +23,7 @@ sassdoc.parse([
     const BR = '\n';
     const NL = BR + BR;
     const shields = fs.readFileSync('./scripts/docs-data/_shields.md', 'utf8');
+    const important = fs.readFileSync('./scripts/docs-data/_important.md', 'utf8');
     const install = fs.readFileSync('./scripts/docs-data/_install.md', 'utf8');
     const globalSettings = fs.readFileSync('./scripts/docs-data/_global-settings.md', 'utf8');
 
@@ -46,8 +50,9 @@ sassdoc.parse([
     const tests = createTests(data, [...functionsArr, ...aliasesArr]);
 
     writeFile(
-        'README.md',
+        './README.md',
         header +
+        important + BR +
         install + BR +
         functions.contents +
         aliases.contents +
@@ -61,6 +66,10 @@ sassdoc.parse([
         './test/test.scss',
         tests
     );
+
+    if (args.includes('release')) {
+        release(args, functions.keywords);
+    }
 
 
 

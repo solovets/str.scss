@@ -1,9 +1,13 @@
 const fs = require('fs');
+const log = require('./log');
 
-function writeFile(filename, filecontent) {
+function writeFile(filename, filecontent, callback) {
     fs.writeFile(filename, filecontent, function(error) {
         if(error) throw error;
-        console.log(filename + ' updated');
+        log.log(filename + ' updated');
+        if (callback) {
+            callback()
+        }
     });
 }
 

@@ -1,4 +1,11 @@
 module.exports = {
+    helpers: [
+        'check-type',
+        'return',
+        'error',
+        'substring-info',
+        'str-get-not-skipped-char-index'
+    ],
     functions: [
         'str-chars',
         'str-char-at',
@@ -24,8 +31,8 @@ module.exports = {
         'str-repeat'
     ],
     aliases: [
-        'str-to-uppercase',
-        'str-to-lowercase',
+        'str-to-upper-case',
+        'str-to-lower-case',
         'str-quote',
         'str-unique-id',
         'str-unquote'

@@ -17,10 +17,10 @@
         $chars: str-chars($input-string);
 
         @each $char in $chars {
-            @if ($char == str-to-uppercase($char)) {
-                $result: $result + str-to-lowercase($char);
+            @if ($char == to-upper-case($char)) {
+                $result: $result + to-lower-case($char);
             } @else {
-                $result: $result + str-to-uppercase($char);
+                $result: $result + to-upper-case($char);
             }
         }
     } @else {

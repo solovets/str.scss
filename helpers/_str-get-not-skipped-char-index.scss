@@ -17,8 +17,8 @@
     }
 
     $exclude: ();
-    @for $i from 1 through str-length($input-string) {
-        $exclude: append($exclude, str-slice($input-string, $i, $i));
+    @for $i from 1 through str-length($trim-chars) {
+        $exclude: append($exclude, str-slice($trim-chars, $i, $i));
     }
 
     @for $i from 1 through str-length($input-string) {

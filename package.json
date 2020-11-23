@@ -1,6 +1,6 @@
 {
     "name": "str.scss",
-    "version": "1.1.1 ",
+    "version": "1.2.0",
     "description": "str.scss - set of functions that helps to manipulate strings.",
     "main": "_str.scss",
     "scripts": {

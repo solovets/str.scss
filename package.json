@@ -1,58 +1,53 @@
 {
-  "name": "str.scss",
-  "version": "1.1.1",
-  "description": "str.scss - set of functions that helps to manipulate strings.",
-  "main": "_str.scss",
-  "scripts": {
-    "test": "sass ./test/test.scss ./test/test.css",
-    "docs": "node dev_scripts/docs.js",
-    "gist": "node dev_scripts/gist.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/solovets/str.scss.git"
-  },
-  "keywords": [
-    "scss",
-    "sass",
-    "string",
-    "strings",
-    "chars",
-    "char-at",
-    "split",
-    "join",
-    "to-uppercase",
-    "to-lowercase",
-    "to-swapcase",
-    "replace",
-    "bulk-replace",
-    "include",
-    "count",
-    "first-index",
-    "last-index",
-    "capitalize",
-    "decapitalize",
-    "reverse",
-    "trim",
-    "ltrim",
-    "rtrim",
-    "clean",
-    "is-blank",
-    "starts-with",
-    "ends-with",
-    "repeat"
-  ],
-  "author": "Denis Solovets",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/solovets/str.scss/issues"
-  },
-  "homepage": "https://github.com/solovets/str.scss#readme",
-  "devDependencies": {
-    "sassdoc": "^2.7.0",
-    "concat-files": "^0.1.1"
-  },
-  "dependencies": {
-
-  }
+    "name": "str.scss",
+    "version": "1.2.0",
+    "description": "str.scss - set of functions that helps to manipulate strings.",
+    "main": "_str.scss",
+    "scripts": {
+        "test": "sass ./test/test.scss ./test/test.css",
+        "docs": "node scripts/docs.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/solovets/str.scss.git"
+    },
+    "keywords": [
+        "scss",
+        "string",
+        "chars",
+        "char-at",
+        "split",
+        "join",
+        "to-swapcase",
+        "replace",
+        "bulk-replace",
+        "include",
+        "count",
+        "first-index",
+        "last-index",
+        "capitalize",
+        "decapitalize",
+        "reverse",
+        "trim",
+        "ltrim",
+        "rtrim",
+        "clean",
+        "is-blank",
+        "starts-with",
+        "ends-with",
+        "repeat"
+    ],
+    "author": "Denis Solovets",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/solovets/str.scss/issues"
+    },
+    "homepage": "https://github.com/solovets/str.scss#readme",
+    "devDependencies": {
+        "chalk": "^4.1.0",
+        "compare-versions": "^3.6.0",
+        "concat-files": "^0.1.1",
+        "sassdoc": "^2.7.0"
+    },
+    "dependencies": {}
 }

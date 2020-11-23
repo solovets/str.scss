@@ -4,6 +4,13 @@ str.scss - set of functions that helps to manipulate strings.
 
 * * * *
 
+**Important updates in v. 1.2**
+
+`str-to-uppercase` alias function is renamed to `str-to-upper-case`  
+`srt-to-lowercase` alias function is renamed to `str-to-lower-case`
+
+Please update your code
+
 ## Install
 
 **[NPM](https://www.npmjs.com/package/str.scss)**
@@ -67,8 +74,8 @@ Compiled to
 
 **Aliases**
 
- + [str-to-uppercase](#str-to-uppercaseinput-string--string) Returns the calling string value converted to uppercase
- + [str-to-lowercase](#str-to-lowercaseinput-string--string) Returns the calling string value converted to lowercase
+ + [str-to-upper-case](#str-to-upper-caseinput-string--string) Returns the calling string value converted to uppercase
+ + [str-to-lower-case](#str-to-lower-caseinput-string--string) Returns the calling string value converted to lowercase
  + [str-quote](#str-quoteinput-string--string) Returns $input-string as quoted string
  + [str-unique-id](#str-unique-id--string) Returns a randomly-generated unquoted string
  + [str-unquote](#str-unquoteinput-string--string) Returns $input-string as unquoted string
@@ -725,7 +732,7 @@ In case of error and `$str-scss-strong-type-check` is set to `false` function re
 
 ## Aliases
 
-### str-to-uppercase($input-string) => string
+### str-to-upper-case($input-string) => string
 
 Returns the calling string value converted to uppercase
 
@@ -740,7 +747,7 @@ _Alias for to-upper-case String SASS built-in function_
 **Example**
 
 ```scss
-@debug str-to-uppercase('hello world');
+@debug str-to-upper-case('hello world');
 // => "HELLO WORLD"
 ```
 
@@ -752,7 +759,7 @@ In case of error and `$str-scss-strong-type-check` is set to `false` function re
 
 * * * *
 
-### str-to-lowercase($input-string) => string
+### str-to-lower-case($input-string) => string
 
 Returns the calling string value converted to lowercase
 
@@ -767,7 +774,7 @@ _Alias for to-lower-case String SASS built-in function_
 **Example**
 
 ```scss
-@debug str-to-lowercase('Hello World');
+@debug str-to-lower-case('Hello World');
 // => "hello world"
 ```
 

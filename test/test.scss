@@ -180,14 +180,14 @@
 @debug str-repeat('Hello', 2, ', ');
 
 @debug('-----------------------------------');
-@debug('function str-to-uppercase');
-@debug("str-to-uppercase('hello world');");
-@debug str-to-uppercase('hello world');
+@debug('function str-to-upper-case');
+@debug("str-to-upper-case('hello world');");
+@debug str-to-upper-case('hello world');
 
 @debug('-----------------------------------');
-@debug('function str-to-lowercase');
-@debug("str-to-lowercase('Hello World');");
-@debug str-to-lowercase('Hello World');
+@debug('function str-to-lower-case');
+@debug("str-to-lower-case('Hello World');");
+@debug str-to-lower-case('Hello World');
 
 @debug('-----------------------------------');
 @debug('function str-quote');

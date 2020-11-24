@@ -46,7 +46,7 @@
     "devDependencies": {
         "chalk": "^4.1.0",
         "concat-files": "^0.1.1",
-        "sassdoc": "^2.7.0"
+        "sassdoc": "^2.7.3"
     },
     "dependencies": {}
 }
